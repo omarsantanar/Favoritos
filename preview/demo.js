@@ -15,9 +15,7 @@ examples.forEach(example => { example.brief = demoBriefs[example.id]; });
 const headers = {
  radar:['INTELIGENCIA DEPORTIVA','Primero las líneas. Después los datos.','Analizamos primero mercados y tendencias; luego verificamos estadísticas. Sugerencias de máximo 300 caracteres.','Observatorio'],
  lineas:['ANÁLISIS DE MERCADOS','Las líneas, bajo la lupa.','Una cuota es un precio, no una certeza. Contrastamos probabilidad, movimiento y popularidad documentada.','Investigación de líneas'],
- historial:['TRAZABILIDAD DEL MODELO','Transparencia, sin atajos.','Los análisis futuros conservarán la cuota original, los supuestos y el resultado oficial para una evaluación independiente.','Historial auditado'],
- metodologia:['CÓMO INVESTIGAMOS','El mercado es el punto de partida.','Partimos de la cuota, contrastamos datos deportivos y cerramos con una sugerencia breve.','Metodología'],
- bitacora:['CONTINUIDAD DEL PRODUCTO','Cada cambio, documentado.','Las decisiones y modificaciones de la plataforma quedan registradas para dar continuidad al desarrollo.','Bitácora']
+ historial:['PRONÓSTICOS Y RESULTADOS','Resultados con contexto.','Cuando existan pronósticos verificados, aquí se podrán consultar las selecciones originales y sus resultados.','Resultados']
 };
 const $ = id => document.getElementById(id);
 const pct = (value,dec=1) => (value*100).toFixed(dec)+'%';

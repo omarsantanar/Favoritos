@@ -18,7 +18,7 @@ El piloto técnico recomendado pasa a **NFL (nflverse + NWS)**; The Odds API Sta
 
 ## Estado actual
 
-Versión **0.1 — prototipo navegable**. Incluye navegación por NBA, NFL, MLB, NHL, MMA, boxeo e hípica; filtros, ordenación, búsqueda, fichas detalladas, vista de líneas, metodología, historial vacío, bitácora, API de investigación con respuesta vacía y pruebas para cálculos de probabilidad implícita y valor esperado.
+Versión **0.1 — prototipo navegable**. Incluye navegación por NBA, NFL, MLB, NHL, MMA, boxeo e hípica; filtros, ordenación, búsqueda, fichas detalladas, vista de líneas, resultados públicos vacíos, API de investigación con respuesta vacía y pruebas para cálculos de probabilidad implícita y valor esperado.
 
 **NO HAY DATOS DEPORTIVOS REALES.** Los equipos, contendientes, probabilidades y cuotas de las tarjetas de demostración son ficticios y aparecen rotulados como tales. Al desactivar «Demostración», el portal muestra correctamente que las fuentes aún no están conectadas. Ninguna tarjeta constituye un pronóstico real o una oportunidad de mercado comprobada.
 

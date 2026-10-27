@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import {
-  Activity, ArrowDownRight, ArrowRight, ArrowUpRight, BarChart3, BookOpen, CalendarDays,
-  ChevronDown, ChevronRight, CircleAlert, Clock3, Database, FlaskConical, History,
+  Activity, ArrowDownRight, ArrowRight, ArrowUpRight, BarChart3, CalendarDays,
+  ChevronDown, ChevronRight, Clock3, Database, FlaskConical, History,
   Info, LayoutDashboard, Menu, Radar, Search, ShieldCheck, SlidersHorizontal, Target,
   TrendingUp, X
 } from 'lucide-react';
@@ -11,21 +11,17 @@ import { scenarios } from '@/lib/scenarios';
 import { sports, type Scenario, type SportFilter } from '@/lib/models';
 import { expectedValue, impliedProbability, percentage } from '@/lib/probability.mjs';
 
-type View = 'radar' | 'lineas' | 'historial' | 'metodologia' | 'bitacora';
+type View = 'radar' | 'lineas' | 'historial';
 type Sort = 'mercado' | 'valor' | 'probabilidad' | 'deporte';
 const mainNav: {id: View; label: string; Icon: typeof Radar}[] = [
   {id:'radar',label:'Observatorio',Icon:LayoutDashboard},
   {id:'lineas',label:'Investigación de líneas',Icon:TrendingUp},
-  {id:'historial',label:'Historial auditado',Icon:History},
-  {id:'metodologia',label:'Metodología',Icon:BookOpen},
-  {id:'bitacora',label:'Bitácora',Icon:Database},
+  {id:'historial',label:'Resultados',Icon:History},
 ];
 const viewHeadings: Record<View, {eyebrow:string; title:string; description:string}> = {
   radar: {eyebrow:'INTELIGENCIA DEPORTIVA', title:'Primero las líneas. Después los datos.',description:'Identificamos mercados y tendencias verificables; contrastamos cada línea con estadísticas antes de publicar una sugerencia de 300 caracteres como máximo.'},
   lineas: {eyebrow:'ANÁLISIS DE MERCADOS',title:'Las líneas, bajo la lupa.',description:'Una cuota es un precio, no una certeza. El observatorio contrasta probabilidades, movimientos y datos de popularidad documentados.'},
-  historial: {eyebrow:'TRAZABILIDAD DEL MODELO',title:'Transparencia, sin atajos.',description:'Todos los análisis publicados deberán conservar su cuota original, fecha, supuestos y resultado oficial para auditoría.'},
-  metodologia: {eyebrow:'CÓMO INVESTIGAMOS',title:'El mercado es el punto de partida.',description:'Primero precio y tendencia; después evidencia deportiva y, por último, una sugerencia breve con incertidumbre explícita.'},
-  bitacora: {eyebrow:'CONTINUIDAD DEL PRODUCTO',title:'Cada cambio, documentado.',description:'Registro cronológico del desarrollo, las decisiones editoriales y las tareas pendientes del observatorio.'}
+  historial: {eyebrow:'PRONÓSTICOS Y RESULTADOS',title:'Resultados con contexto.',description:'Cuando existan pronósticos verificados, aquí se podrán consultar las selecciones originales y sus resultados.'}
 };
 
 function dateInSantoDomingo() {
@@ -103,15 +99,7 @@ function Metrics({demo}:{demo:boolean}) {
     <div className="metric-top"><span>{label}</span><Icon size={18}/></div><div className="metric-value">{value}</div><div className="metric-meta"><span className="tiny-circle"/>{meta}</div>
   </div>)}</div>;
 }
-function Methodology(){return <div className="essay-grid">
-  <section className="essay-panel"><span className="panel-kicker">01 / FLUJO EDITORIAL</span><h2>Mercado → contraste → sugerencia.</h2><p>Partimos de líneas y apuestas en tendencia, únicamente con popularidad verificable. Identificamos selección, cuota, casa y fecha; después revisamos estadísticas, lesiones y contexto. Cerramos con un análisis de máximo 300 caracteres que contenga una sugerencia concreta.</p><div className="rule-stack"><div><ShieldCheck size={18}/><span>No publicamos estadísticas ni titulares sin verificación.</span></div><div><CircleAlert size={18}/><span>No usamos porcentajes sintéticos para eventos reales.</span></div><div><Target size={18}/><span>Si no hay ventaja defendible, la conclusión es «sin selección».</span></div></div></section>
-  <section className="essay-panel soft"><span className="panel-kicker">02 / MATEMÁTICA</span><h2>Probabilidad ≠ precio.</h2><div className="formula"><span>Probabilidad implícita</span><strong>1 / cuota decimal</strong></div><div className="formula"><span>Valor esperado por unidad</span><strong>P(modelo) × cuota − 1</strong></div><p>El margen de una casa debe ajustarse cuando puedan verificarse todos los resultados mutuamente excluyentes. Un EV positivo no garantiza aciertos ni rentabilidad.</p></section>
-  <section className="essay-panel"><span className="panel-kicker">03 / TENDENCIAS</span><h2>Popularidad no es movimiento.</h2><p>Una variación en cuotas puede reflejar múltiples factores. Para afirmar que una línea es popular requerimos volumen, proporción de apuestas u otra medida explícita, con método y fuente comprobables.</p><p>Sin cifras de participación contrastadas, el campo «Popularidad» se mostrará como «No disponible».</p></section>
-  <section className="essay-panel"><span className="panel-kicker">04 / CONDUCTA</span><h2>Nunca una casa de apuestas.</h2><p>El portal no tramita apuestas, no administra saldos, no acepta depósitos ni ofrece enlaces para apostar en esta versión. Presenta investigación deportiva, escenarios y probabilidades sujetas a incertidumbre.</p><p>El informe incluirá fuentes, horario dominicano, lesiones y clima cuando correspondan.</p></section>
-  </div>}
 function AuditHistory(){return <div className="history-box"><div className="history-symbol"><History size={31}/></div><h2>Todavía no hay pronósticos publicados</h2><p>El historial permanecerá vacío hasta que existan pronósticos originales fechados y respaldados por fuentes verificables. Los escenarios del modo demostración no se contabilizan como aciertos, errores ni resultados de un modelo.</p><div className="history-labels"><span><ShieldCheck size={15}/> Registro inalterable</span><span><BarChart3 size={15}/> Calibración</span><span><Clock3 size={15}/> Hora de publicación</span></div></div>}
-function Changelog(){return <div className="log-box"><div className="log-date"><span>26 OCT 2026</span><span className="version-pill">v0.1.4 · Mercado primero</span></div><h2>Investigación basada en líneas</h2><p>Se crea el diseño inicial, la navegación por deportes, el motor de cálculos descriptivos, los escenarios ficticios, las vistas de metodología e historial, un contrato de API y la documentación de continuidad.</p><div className="log-entry"><div><span className="log-dot"/></div><div><strong>Regla editorial innegociable</strong><p>Nunca procesar apuestas ni gestionar dinero; investigar mercados y formular lecturas estadísticas verificables.</p></div></div><div className="log-entry"><div><span className="log-dot"/></div><div><strong>Separación estricta de datos</strong><p>La API de investigación real devuelve registros vacíos; los escenarios inventados solo funcionan dentro de la demostración.</p></div></div><div className="log-entry"><div><span className="log-dot"/></div><div><strong>Próxima fase</strong><p>Conectar fuentes autorizadas, implementar validaciones, ingesta, persistencia y revisión editorial antes del primer pronóstico público.</p></div></div><p className="file-note">Registro detallado: <code>docs/BITACORA.md</code></p></div>}
-
 export default function Dashboard(){
   const [view,setView]=useState<View>('radar');
   const [sport,setSport]=useState<SportFilter>('Todos');
@@ -138,28 +126,26 @@ export default function Dashboard(){
       <nav className="side-nav" aria-label="Navegación principal">{mainNav.map(({id,label,Icon})=><button key={id} className={`side-link ${view===id?'active':''}`} onClick={()=>changeView(id)}><Icon size={18}/><span>{label}</span>{view===id&&<span className="active-mark"/>}</button>)}</nav>
       <div className="side-section-label sports-title">DISCIPLINAS</div>
       <div className="sport-nav">{sports.filter(s=>s!=='Todos').map((s)=><button key={s} onClick={()=>{setSport(s);changeView('radar')}} className={`sport-nav-item ${sport===s&&view==='radar'?'chosen':''}`}><span className="sport-dot"/>{s}<ChevronRight size={15}/></button>)}</div>
-      <div className="sidebar-bottom"><div className="compliance"><ShieldCheck size={18}/><div><strong>Investigación independiente</strong><span>Sin apuestas ni depósitos</span></div></div><p>EDICIÓN DE DESARROLLO <strong>0.1.0</strong></p></div>
+      <div className="sidebar-bottom"><div className="compliance"><ShieldCheck size={18}/><div><strong>Investigación independiente</strong><span>Sin apuestas ni depósitos</span></div></div></div>
     </aside>
     <div className="main-area">
-      <header className="topbar"><div className="topbar-left"><button className="mobile-menu" aria-label="Abrir menú" onClick={()=>setMobileMenu(!mobileMenu)}>{mobileMenu?<X size={23}/>:<Menu size={23}/>}</button><span className="desktop-path">OBSERVATORIO</span><ChevronRight size={15} className="desktop-path"/><strong>{mainNav.find(x=>x.id===view)?.label}</strong></div><div className="topbar-right"><span className="timezone"><Clock3 size={15}/>{date}</span><span className="prototype-pill"><span/> PROTOTIPO v0.1</span></div></header>
+      <header className="topbar"><div className="topbar-left"><button className="mobile-menu" aria-label="Abrir menú" onClick={()=>setMobileMenu(!mobileMenu)}>{mobileMenu?<X size={23}/>:<Menu size={23}/>}</button><span className="desktop-path">OBSERVATORIO</span><ChevronRight size={15} className="desktop-path"/><strong>{mainNav.find(x=>x.id===view)?.label}</strong></div><div className="topbar-right"><span className="timezone"><Clock3 size={15}/>{date}</span><span className="prototype-pill"><span/> DEMOSTRACIÓN</span></div></header>
       <main className="content">
         <div className="notice-banner"><FlaskConical size={19}/><p><strong>Entorno de demostración.</strong> El portal todavía no tiene proveedores conectados. Todos los encuentros y números visibles al activar la demostración son ficticios y no son sugerencias deportivas reales.</p></div>
-        <section className="hero"><div className="hero-copy"><div className="eyebrow"><span className="eyebrow-line"/>{header.eyebrow}</div><h1>{header.title}</h1><p>{header.description}</p><div className="hero-tags"><span><ShieldCheck size={14}/> Fuentes auditables</span><span><BarChart3 size={14}/> Probabilidades explicadas</span><span><Target size={14}/> Sin apuestas</span></div></div><div className="hero-art" aria-hidden="true"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="orbit orbit-three"/><div className="orbit-dot"/><Radar size={90} strokeWidth={0.7}/><span>RESEARCH / 0.1</span></div></section>
+        <section className="hero"><div className="hero-copy"><div className="eyebrow"><span className="eyebrow-line"/>{header.eyebrow}</div><h1>{header.title}</h1><p>{header.description}</p><div className="hero-tags"><span><ShieldCheck size={14}/> Fuentes auditables</span><span><BarChart3 size={14}/> Probabilidades explicadas</span><span><Target size={14}/> Sin apuestas</span></div></div><div className="hero-art" aria-hidden="true"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="orbit orbit-three"/><div className="orbit-dot"/><Radar size={90} strokeWidth={0.7}/><span>RADAR DE LÍNEAS</span></div></section>
         {view==='radar'&&<>
           <Metrics demo={demo}/>
           <section className="section-content"><div className="section-heading"><div><span className="section-overline">CENTRO DE ANÁLISIS</span><h2>Radar de líneas deportivas</h2><p>Primero observamos mercados; después contrastamos estadísticas. Cada sugerencia, máximo 300 caracteres.</p></div><label className="demo-toggle"><span>Demostración</span><input type="checkbox" checked={demo} onChange={e=>setDemo(e.target.checked)}/><span className="switch"/></label></div>
             <div className="filters"><div className="sports-scroll">{sports.map(s=><button key={s} onClick={()=>setSport(s)} className={`chip ${sport===s?'selected':''}`}>{s}</button>)}</div><div className="filters-secondary"><label className="search-field"><Search size={17}/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Buscar escenario..." aria-label="Buscar escenario"/></label><label className="sort-field"><SlidersHorizontal size={16}/><select value={sort} onChange={e=>setSort(e.target.value as Sort)} aria-label="Ordenar por"><option value="mercado">Mercado primero</option><option value="valor">Valor esperado*</option><option value="probabilidad">Probabilidad*</option><option value="deporte">Deporte</option></select><ChevronDown size={14}/></label><button onClick={()=>setOnlyPositive(!onlyPositive)} className={`value-filter ${onlyPositive?'on':''}`}>EV positivo*</button></div></div>
             {demo?<><div className="results-note"><span><FlaskConical size={15}/> {filtered.length} escenarios ficticios · ningún evento real</span><span>* Números sintéticos</span></div>{filtered.length?<div className="scenario-grid">{filtered.map(x=><ScenarioCard key={x.id} data={x} onOpen={()=>setSelected(x.id)}/>)}</div>:<div className="no-matches">No hay casos ficticios que coincidan con estos filtros. Prueba otra búsqueda.</div>}</>:<NoData/>}
           </section>
-          <section className="insight-grid"><div className="insight-card"><div className="insight-symbol"><TrendingUp size={20}/></div><span>LECTURA DE MERCADO</span><h3>Una línea que se mueve no revela por sí sola la tendencia del público.</h3><p>Para identificar apuestas populares se necesitan métricas de volumen o distribución verificables. Sin esos datos, no afirmamos popularidad.</p><button onClick={()=>changeView('metodologia')}>Conocer el criterio <ArrowRight size={16}/></button></div><div className="insight-card quote"><span>CRITERIO EDITORIAL</span><h3>“Un favorito no siempre representa una oportunidad de valor”.</h3><p>El resultado más probable y el precio ofrecido son preguntas distintas. Ambas deben investigarse por separado.</p><button onClick={()=>changeView('lineas')}>Examinar las líneas <ArrowRight size={16}/></button></div></section>
+          <section className="insight-grid"><div className="insight-card"><div className="insight-symbol"><TrendingUp size={20}/></div><span>LECTURA DE MERCADO</span><h3>Una línea que se mueve no revela por sí sola la tendencia del público.</h3><p>Para identificar apuestas populares se necesitan métricas de volumen o distribución verificables. Sin esos datos, no afirmamos popularidad.</p><button onClick={()=>changeView('lineas')}>Examinar líneas <ArrowRight size={16}/></button></div><div className="insight-card quote"><span>CRITERIO EDITORIAL</span><h3>“Un favorito no siempre representa una oportunidad de valor”.</h3><p>El resultado más probable y el precio ofrecido son preguntas distintas. Ambas deben investigarse por separado.</p><button onClick={()=>changeView('lineas')}>Examinar las líneas <ArrowRight size={16}/></button></div></section>
         </>}
         {view==='lineas'&&<section className="section-content"><div className="section-heading"><div><span className="section-overline">TABLA COMPARATIVA</span><h2>Observación de precios y probabilidades</h2><p>Las cifras siguientes solo aparecen en modo demostración; no corresponden a ninguna casa.</p></div><label className="demo-toggle"><span>Demostración</span><input type="checkbox" checked={demo} onChange={e=>setDemo(e.target.checked)}/><span className="switch"/></label></div>
           {demo?<><div className="table-scroll"><table className="market-table"><thead><tr><th>ESCENARIO FICTICIO</th><th>SELECCIÓN</th><th>P(MODELO)*</th><th>P(MERCADO)*</th><th>EV*</th><th>POPULARIDAD</th><th></th></tr></thead><tbody>{scenarios.map(x=><tr key={x.id}><td><SportBadge sport={x.sport}/><strong>{x.matchup}</strong></td><td>{x.selection}</td><td>{percentage(x.probability)}</td><td>{percentage(impliedProbability(x.decimalOdds))}</td><td><EvLabel scenario={x}/></td><td className="availability">No disponible</td><td><button className="table-arrow" onClick={()=>setSelected(x.id)} aria-label={`Abrir ${x.matchup}`}><ArrowUpRight size={18}/></button></td></tr>)}</tbody></table></div><p className="table-note">* Valores totalmente inventados para ensayar la representación visual y la fórmula de EV. La P(mercado) no está ajustada por margen en estos ejemplos.</p></>:<NoData section="La tabla permanecerá vacía hasta disponer de líneas identificadas por casa, mercado y hora de consulta."/>}
           </section>}
         {view==='historial'&&<AuditHistory/>}
-        {view==='metodologia'&&<Methodology/>}
-        {view==='bitacora'&&<Changelog/>}
-        <footer className="footer"><span>© 2026 Radar Deportivo · Producto informativo en desarrollo</span><span>No procesamos apuestas · No se garantizan resultados</span></footer>
+        <footer className="footer"><span>© 2026 Radar Deportivo · Información deportiva</span><span>No procesamos apuestas · No se garantizan resultados</span></footer>
       </main>
     </div>
     {current&&<Detail data={current} onClose={()=>setSelected(null)}/>}

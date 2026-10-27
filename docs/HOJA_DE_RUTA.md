@@ -2,7 +2,7 @@
 
 ## v0.1 · Portal inicial — preparado
 - Identidad y diseño desktop/móvil.
-- Secciones observatorio, investigación de líneas, historial, metodología y bitácora.
+- Interfaz pública: Observatorio, Investigación de líneas y Resultados. Bitácora y metodología detallada permanecen como documentación interna del equipo, fuera del sitio.
 - Filtros interactivos y fichas ficticias inequívocamente identificadas.
 - Endpoints que impiden confundir demo con datos reales.
 - Manual operativo, bitácora, esquema y automatización de pruebas.

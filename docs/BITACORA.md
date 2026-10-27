@@ -1,3 +1,13 @@
+## 2026-10-27 · v0.1.5 · Contenido interno separado del portal público
+
+- **Motivo:** el usuario advirtió que la navegación pública exponía «Metodología» y «Bitácora» del proceso de desarrollo.
+- **Cambios realizados:** Next.js y demos eliminan completamente vistas, paneles, botones y contenidos internos. Menú público: **Observatorio, Investigación de líneas y Resultados**. Historial de pronósticos permanece vacío hasta existir datos verificables.
+- **Presentación:** ocultados identificadores de versión internos en sidebar/cabecera; permanece aviso de demostración y cifras ficticias.
+- **Archivos:** `components/dashboard.tsx`, `preview/index.html`, `preview/demo.js`, `preview/standalone.html`, `tests/public-interface.test.mjs`, `docs/DECISIONES.md`, `docs/HOJA_DE_RUTA.md`, `README.md` y esta bitácora.
+- **Separación:** documentación detallada sigue en GitHub para continuidad, no se sirve en el sitio por navegación o endpoints. **Advertencia:** el repositorio es público, y los archivos `docs/` siguen accesibles en GitHub. Para confidencialidad real, convertir repositorio en privado o separar documentación sensible en uno privado; ocultar menú no constituye control de acceso.
+- **Pruebas:** nueva batería de pruebas de navegación y ausencia de contenido interno; revisar CI de PR (npm test, typecheck, build) antes de fusionar.
+- **Estado de despliegue:** publicación depende de GitHub Pages habilitado o de Vercel. No afirmar sitio actualizado hasta verificar despliegue.
+
 ## 2026-10-27 · Ejecución de publicación Pages y resultado comprobado
 
 - **Repositorio oficial:** `omarsantanar/Favoritos`.
