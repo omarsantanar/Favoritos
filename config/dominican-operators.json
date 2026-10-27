@@ -1,0 +1,83 @@
+{
+  "version": "0.3.0",
+  "checked_on": "2026-10-27",
+  "regulator": "https://www.casinos.gob.do/juegos-autorizados/juegos-de-azar-por-internet/",
+  "category": "operadores de juegos por internet",
+  "ranking": "Sin clasificación de cuota de mercado. Los siete son operadores identificados por DCJA, no necesariamente los siete con más volumen.",
+  "sponsorship": false,
+  "direct_betting_links_in_public_ui": false,
+  "licensed_sports_explicit": 5,
+  "licensed_online_without_sports_mode_listed": 2,
+  "operators": [
+    {
+      "id": "juancito",
+      "name": "Juancito Sport",
+      "legal_name": "JUANCITO SPORT SRL",
+      "domain": "juancitosport.com.do",
+      "website": "https://www.juancitosport.com.do/",
+      "sports_authorization": "explicit",
+      "availability": "market_iframe_unreadable",
+      "note": "Deportes publicados en iframe; cuotas no recuperadas sin interacción."
+    },
+    {
+      "id": "betcris",
+      "name": "Betcris RD",
+      "legal_name": "BETCRIS BANCA DE APUESTA S R L",
+      "domain": "betcris.do",
+      "website": "https://www.betcris.do/",
+      "sports_authorization": "not_specified_in_registry",
+      "availability": "sports_website_no_public_quotes",
+      "note": "En listado oficial de juegos por internet; modalidad no especificada en la tabla. Página deportiva existe."
+    },
+    {
+      "id": "gogo",
+      "name": "Gogo Sport",
+      "legal_name": "GOGO SPORT SRL",
+      "domain": "gogobanca.com",
+      "website": "https://www.gogobanca.com/",
+      "sports_authorization": "explicit",
+      "availability": "requires_javascript",
+      "note": "Portal de boletos externo depende de JavaScript; no hay línea verificable."
+    },
+    {
+      "id": "superbets",
+      "name": "SuperBets",
+      "legal_name": "GAME TECHNOLOGY INTERNATIONAL, S.R.L.",
+      "domain": "superbets.do",
+      "website": "https://www.superbets.do/",
+      "sports_authorization": "not_specified_in_registry",
+      "availability": "no_public_quotes",
+      "note": "En listado oficial de internet, modalidad de licencia sin especificar; oferta deportiva visible en web."
+    },
+    {
+      "id": "orobet",
+      "name": "Orobet",
+      "legal_name": "OROBET, S.R.L",
+      "domain": "orobet.do",
+      "website": "https://www.orobet.do/",
+      "sports_authorization": "explicit",
+      "availability": "sports_page_no_public_quotes",
+      "note": "Deportes registrados pero no hay líneas consultables verificadas."
+    },
+    {
+      "id": "vip987",
+      "name": "VIP987",
+      "legal_name": "BREEZE MANAGEMENT, CORP.",
+      "domain": "vip987.do",
+      "website": "https://vip987.do/",
+      "sports_authorization": "explicit",
+      "availability": "blocked_403",
+      "note": "Acceso web bloqueado (HTTP 403); no eludir."
+    },
+    {
+      "id": "appuesta",
+      "name": "Appuesta / DRBets",
+      "legal_name": "DRBETS, SRL",
+      "domain": "appuesta.do",
+      "website": "https://appuesta.do/",
+      "sports_authorization": "explicit",
+      "availability": "unavailable",
+      "note": "Dominio oficial citado por DCJA; el sitio no respondió durante la consulta."
+    }
+  ]
+}
