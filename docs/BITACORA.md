@@ -1,3 +1,11 @@
+## 2026-10-26 · Verificación de publicación GitHub en Favoritos
+
+**Resultado confirmado:** primera publicación de Radar Deportivo v0.1.4 en `https://github.com/omarsantanar/Favoritos`, rama `main`, con 43 archivos de código, pruebas y documentación. Commit de importación: `80fa2d2df789aa21b03c39d71adcd0aa8ec7b465`.
+
+**Auditoría remota:** árbol GitHub verificado sin truncamiento, con `AGENTS.md`, `docs/BITACORA.md`, `components/dashboard.tsx` y `.github/workflows/ci.yml`. CI del commit de importación: **success**, ejecución [40433997282](https://github.com/omarsantanar/Favoritos/actions/runs/40433997282). Ello acredita las comprobaciones ejecutadas por el flujo; no equivale a despliegue web ni a alimentación de datos reales.
+
+**Siguiente etapa:** configurar dominio/despliegue cuando sea solicitado y conectar fuentes gratuitas legítimas con validación editorial. Conservar línea de mercado como punto de partida y comentarios de máximo 300 caracteres.
+
 ## 2026-10-26 · v0.1.4 · Vinculación inicial con `omarsantanar/Favoritos`
 
 **Solicitud:** publicar el desarrollo actual en GitHub. El usuario precisó que `Favoritos` es el repositorio correcto.
