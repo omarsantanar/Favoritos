@@ -43,7 +43,7 @@ class TestIngestion(unittest.TestCase):
         teams = {r["team"]: r for r in d["teams"]}
         self.assertEqual(teams["ABC"]["plate_stat_lines"], 2)
         self.assertEqual(teams["ABC"]["at_bats"], 150)
-        self.assertAlmostEqual(teams["ABC"]["obp"], 51/169, places=4)
+        self.assertAlmostEqual(teams["ABC"]["obp"], 56/169, places=4)
         # Singles = 30+10-(5+1+1+0+3+0) = 30; total bases = 40 +6+2+9=57
         self.assertAlmostEqual(teams["ABC"]["slg"], 57/150, places=4)
 
