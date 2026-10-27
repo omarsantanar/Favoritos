@@ -56,3 +56,7 @@ No activar datos reales hasta tener conectores gratuitos y autorizados, validado
 ## 8. Importaciones avanzadas
 
 Consultar `config/advanced-stats-sources.json` antes de activar cualquier extracción. Solo `nflverse_pbp` y `lahman_batting` están codificados para descarga con fuentes/licencias registradas; ejecución exclusivamente manual. Los otros cuatro deportes tienen veto de ingesta hasta revisión documental de derechos. No abrir endpoints genéricos de scraping ni usar cookies/proxies para superar bloqueos. No publicar agregados sin auditar su procedencia y contrastar mercados. Ver `docs/ESTADISTICAS_AVANZADAS.md`.
+
+## 9. Bancas dominicanas y líneas diarias
+
+Consultar `config/dominican-operators.json` y el directorio oficial DCJA. El estado regulatorio es independiente de la licencia para reutilizar cuotas. Capturar líneas exclusivamente cuando se vean realmente y sea legítimo registrarlas; `scripts/import-domestic-lines.mjs` valida evidencia, fuente HTTPS, fecha RD y edad máxima de dos horas antes de guardarlas. API `/api/domestic-lines` nunca crea pronósticos ni publica contenido de revisión interna. Ver `docs/LINEAS_DOMINICANAS.md`.

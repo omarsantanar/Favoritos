@@ -1,3 +1,18 @@
+## 2026-10-27 · v0.3.0 · Directorio DCJA y capturas de líneas diarias RD
+
+- **Solicitud:** localizar principales bancas deportivas de República Dominicana e integrar sus líneas diarias en «Investigación de líneas».
+- **Fuente primaria:** DCJA [operadores por internet](https://www.casinos.gob.do/juegos-autorizados/juegos-de-azar-por-internet/); siete dominios oficialmente listados, cinco con modalidad deportiva expresa y dos sin modalidad detallada en tabla. No asumir ranking por tamaño.
+- **Diligencia:** Juancito, Betcris, Gogo, SuperBets, Orobet, VIP987 y Appuesta. Los sitios deportivos dependen de iframes/JavaScript, muestran páginas sin líneas precisas o bloquearon la consulta. **No se verificó ninguna cuota de los partidos del día**, por tanto el snapshot inicial contiene cero observaciones.
+- **Política regulatoria:** se excluyen de la lista local autorizada los dominios que la DCJA identifica como no autorizados, incluidos bet365, 1xBet, Betsson y Star Sport. La comparación internacional histórica sigue diferenciada del mercado local.
+- **Código:** registro de operadores `config/dominican-operators.json`; captura editorial `data/dominican-daily-lines.json`; validación `lib/dominican-lines.mjs`, tipos, API `/api/domestic-lines`, procedimiento de importación manual, UI Next.js y estado de demostración HTML; pruebas de regresión.
+- **Vigencia:** solo precio con operador, evento, deporte, mercado, selección, casa, fuente HTTPS, revisor, evidencia y hora. Máximo dos horas, sesión prepartido y misma fecha de Santo Domingo; sin suplir cuotas faltantes.
+- **Sin operaciones de apuestas:** no depósitos, cuentas, enlaces transaccionales, ofertas o scraping de páginas restringidas.
+- **Verificación:** validar en CI npm test, typecheck, build, vista pública y rechazo de cuotas caducadas o atribuciones incorrectas.
+- **Despliegue:** no asumir Vercel conectado ni actualizaciones públicas sin verificación.
+- **Límite funcional:** la incorporación de líneas reales depende de revisión editorial o un feed gratuito con derechos, que hoy no se identificó para los siete operadores.
+- **Fuentes y procedimiento completo:** `docs/LINEAS_DOMINICANAS.md`.
+
+
 ## 2026-10-27 · Cierre verificable v0.2.0 — importación avanzada
 
 - **Pull request aprobado y fusionado:** [#4](https://github.com/omarsantanar/Favoritos/pull/4), commit en `main` `6b6b52f2852c577f269a4619ee04daa0ec2d958e`.

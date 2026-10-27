@@ -113,3 +113,9 @@ Consulta [el directorio editorial](docs/DIRECTORIO_DE_FUENTES.md), `config/porta
 La ingesta **manual y restringida** de datos con licencia se implementa para NFL (nflverse EPA por jugada) y MLB (SABR/Lahman histórico OBP/SLG/OPS). No es scraping de HTML, ni está habilitada la ingesta de NBA/NHL/MMA/boxeo sin revisar derechos. El JSON resultante es solo de investigación: no modifica el portal ni entrega pronósticos.
 
 Ejecutar `python3 -m unittest discover -s tests -p 'test_ingest_*.py' -v`. Para descargar conjuntos permitidos: `python3 scripts/ingest_advanced.py --source nflverse_pbp --season 2026` o `--source lahman_batting --season 2025`. También disponible en GitHub Actions mediante `workflow_dispatch`. Consultar [la guía de estadísticas avanzadas](docs/ESTADISTICAS_AVANZADAS.md) y [el registro de permisos](config/advanced-stats-sources.json).
+
+## Mercado de bancas dominicanas (v0.3.0)
+
+`GET /api/domestic-lines` lista siete operadores identificados por la DCJA y las líneas **únicamente si están comprobadas** por un editor, con vigencia máxima de dos horas. La subsección **Líneas diarias RD** forma parte de **Investigación de líneas**. No enlaza a plataformas transaccionales ni inventa precios cuando no hay cotizaciones verificadas. Los siete proveedores no ofrecen actualmente una API de cuotas gratuita y autorizada identificada para el proyecto.
+
+Registro regulatorio: `config/dominican-operators.json`. Registro de cotizaciones: `data/dominican-daily-lines.json`. Revisión manual: `node scripts/import-domestic-lines.mjs /ruta/observaciones.json`. Guía: [docs/LINEAS_DOMINICANAS.md](docs/LINEAS_DOMINICANAS.md).
