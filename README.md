@@ -1,4 +1,4 @@
-# Radar Deportivo · v0.1.4
+# Radar Deportivo · motor de datos v0.2.0 (interfaz v0.1.6)
 
 **Observatorio de investigación deportiva, líneas de mercado y probabilidades.**
 
@@ -107,3 +107,9 @@ Para publicar la aplicación Next.js completa con sus endpoints se recomienda im
 Favoritos cubre **NBA, NFL, MLB, NHL, MMA y boxeo**. La hípica fue eliminada del código y catálogos activos en v0.1.6.
 
 Consulta [el directorio editorial](docs/DIRECTORIO_DE_FUENTES.md), `config/portales-oficiales.json` y `config/casas-observacion.json`. Son fuentes para **consulta manual** sin conexión automática, licencia de scraping ni promociones de apuestas. Los análisis públicos conservan el límite de 300 caracteres con sugerencia.
+
+## Ingesta avanzada de investigación (v0.2)
+
+La ingesta **manual y restringida** de datos con licencia se implementa para NFL (nflverse EPA por jugada) y MLB (SABR/Lahman histórico OBP/SLG/OPS). No es scraping de HTML, ni está habilitada la ingesta de NBA/NHL/MMA/boxeo sin revisar derechos. El JSON resultante es solo de investigación: no modifica el portal ni entrega pronósticos.
+
+Ejecutar `python3 -m unittest discover -s tests -p 'test_ingest_*.py' -v`. Para descargar conjuntos permitidos: `python3 scripts/ingest_advanced.py --source nflverse_pbp --season 2026` o `--source lahman_batting --season 2025`. También disponible en GitHub Actions mediante `workflow_dispatch`. Consultar [la guía de estadísticas avanzadas](docs/ESTADISTICAS_AVANZADAS.md) y [el registro de permisos](config/advanced-stats-sources.json).

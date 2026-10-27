@@ -73,3 +73,7 @@ Para un MVP fiable, **NFL + nflverse + NWS** es el mejor piloto totalmente repro
 ## 27 de octubre de 2026 — Nuevo alcance y directorio
 
 La hípica se retira de las disciplinas y del registro activo de fuentes. Las seis coberturas son NBA, NFL, MLB, NHL, MMA y boxeo. El directorio de portales oficiales y webs de casas está en `docs/DIRECTORIO_DE_FUENTES.md`; los catálogos estructurados en `config/portales-oficiales.json` y `config/casas-observacion.json`. Todos los sitios de casas se califican como **consulta manual** y no se han conectado APIs automáticas ni publicado precios reales.
+
+## Motor de descargas licenciadas (27 de octubre de 2026)
+
+Se implementa la importación manual de nflverse PBP (EPA por jugada) y SABR/Lahman Batting.csv histórico (OBP/SLG/OPS), sin scraping HTML y sin publicar datos directamente. Cuatro disciplinas pendientes por permisos: NBA, NHL, MMA, boxeo. Licencias, fuentes originales, hosts, límites de uso y procedimientos: `docs/ESTADISTICAS_AVANZADAS.md` y `config/advanced-stats-sources.json`.

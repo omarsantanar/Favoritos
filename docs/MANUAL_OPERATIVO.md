@@ -52,3 +52,7 @@ No activar datos reales hasta tener conectores gratuitos y autorizados, validado
 - Limitaciones:
 - Siguiente hito:
 ```
+
+## 8. Importaciones avanzadas
+
+Consultar `config/advanced-stats-sources.json` antes de activar cualquier extracción. Solo `nflverse_pbp` y `lahman_batting` están codificados para descarga con fuentes/licencias registradas; ejecución exclusivamente manual. Los otros cuatro deportes tienen veto de ingesta hasta revisión documental de derechos. No abrir endpoints genéricos de scraping ni usar cookies/proxies para superar bloqueos. No publicar agregados sin auditar su procedencia y contrastar mercados. Ver `docs/ESTADISTICAS_AVANZADAS.md`.
