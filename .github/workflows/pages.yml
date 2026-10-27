@@ -1,0 +1,58 @@
+name: Publicar demostración en GitHub Pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pages.yml'
+      - 'preview/standalone.html'
+  pull_request:
+    paths:
+      - '.github/workflows/pages.yml'
+      - 'preview/standalone.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages-favoritos
+  cancel-in-progress: true
+
+jobs:
+  preparar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validar página independiente y construir artefacto
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s preview/standalone.html
+          grep -q 'Entorno de demostración' preview/standalone.html
+          grep -qi 'fictici' preview/standalone.html
+          mkdir -p _site
+          cp preview/standalone.html _site/index.html
+          touch _site/.nojekyll
+          echo 'User-agent: *' > _site/robots.txt
+          echo 'Disallow: /' >> _site/robots.txt
+          test -s _site/index.html
+      - name: Cargar artefacto estático
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  desplegar:
+    if: github.event_name != 'pull_request'
+    needs: preparar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
