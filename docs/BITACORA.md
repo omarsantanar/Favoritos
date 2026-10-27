@@ -1,3 +1,14 @@
+## 2026-10-27 · Cierre verificable v0.2.0 — importación avanzada
+
+- **Pull request aprobado y fusionado:** [#4](https://github.com/omarsantanar/Favoritos/pull/4), commit en `main` `6b6b52f2852c577f269a4619ee04daa0ec2d958e`.
+- **CI:** [40499088969](https://github.com/omarsantanar/Favoritos/actions/runs/40499088969) **success**, incluidas pruebas de Python offline, npm test, typecheck y compilación Next.js.
+- **Descargas reales por PR:** [40499089107](https://github.com/omarsantanar/Favoritos/actions/runs/40499089107) **success en ambas fuentes**. NFL nflverse `2026`: 13.179 jugadas run/pass válidas de temporada regular agregadas en **32 equipos**. MLB Lahman `2025`: 1.692 registros de bateo AL/NL agregados en **30 equipos**. Se generaron artefactos JSON de investigación sin añadirlos a la web.
+- **Conformidad:** quedan cuatro disciplinas sin descarga automática (NBA, NHL, MMA y boxeo), a la espera de derechos y calidad. No se extrajeron HTML de sitios con restricciones.
+- **Límites de verificación:** estos recuentos son `observations` de los importadores, no resultados del modelo predictivo ni porcentaje de líneas ganadoras. Los agregados no consideran disponibilidad de jugadores, otras métricas ni cuota. No se publicaron pronósticos.
+- **Despliegue:** ningún despliegue de Vercel ni GitHub Pages confirmado. La nueva funcionalidad se ejecutó en GitHub Actions y su uso periódico continúa siendo **manual**.
+- **Siguiente revisión:** actualizar fuente/licencia, identificar temporada y corte exactos en cada importación, explorar fuentes y autorizaciones para las cuatro disciplinas pendientes; diseñar cruce con líneas reales gratuitas sin afirmaciones de rentabilidad.
+
+
 ## 2026-10-27 · v0.2.0 · Motor de extracción avanzada con licencias
 
 - **Solicitud:** incluir scraping/extracción de estadísticas avanzadas para las seis disciplinas de Favoritos.
