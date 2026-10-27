@@ -1,3 +1,14 @@
+## 2026-10-27 · Cierre v0.3.0: registro RD y líneas de observación
+
+- **Integración en main:** [PR #5](https://github.com/omarsantanar/Favoritos/pull/5), commit de fusión `d10633baea0983cd7e4c8aa20d5bed2d7e7e6510`.
+- **CI en PR:** [ejecución 40501174986](https://github.com/omarsantanar/Favoritos/actions/runs/40501174986) **success**: pruebas de importación Python, pruebas de aplicación Node, verificación de tipos y compilación Next.js.
+- **Verificación remota:** `components/dashboard.tsx` contiene «Líneas diarias RD»; `app/api/domestic-lines/route.ts` existe; el registro identifica siete operadores del directorio de juegos por internet de DCJA. `data/dominican-daily-lines.json` tiene cero precios comprobados de las casas.
+- **Alcance real:** los sitios locales se identifican y muestran como fuentes, pero sus cuotas aún no son accesibles sin revisión individual o feed autorizado. No hay importación automatizada de casas ni probabilidades calculadas a partir de precios ficticios.
+- **Estado de alojamiento:** el código está fusionado y compiló en CI. No se ha demostrado que Vercel o GitHub Pages sirvan esta versión. Un artefacto Pages no implica un sitio desplegado.
+- **Protección:** datos de captura editorial deben evitar información sensible y quedan visibles en GitHub si se hace commit al repositorio público. Las notas internas no se exponen en la respuesta API, pero para privacidad real deberán quedar fuera de un repositorio público.
+- **Siguiente hito:** definir una captura editorial privada o integración autorizada, con políticas de conservación y controles, para disponer de líneas diarias reales.
+
+
 ## 2026-10-27 · v0.3.0 · Directorio DCJA y capturas de líneas diarias RD
 
 - **Solicitud:** localizar principales bancas deportivas de República Dominicana e integrar sus líneas diarias en «Investigación de líneas».
