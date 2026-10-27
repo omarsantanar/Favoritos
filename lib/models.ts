@@ -1,4 +1,4 @@
-export const sports = ["Todos", "NBA", "NFL", "MLB", "NHL", "MMA", "Boxeo", "Hípica"] as const;
+export const sports = ["Todos", "NBA", "NFL", "MLB", "NHL", "MMA", "Boxeo"] as const;
 export type Sport = Exclude<(typeof sports)[number], "Todos">;
 export type SportFilter = (typeof sports)[number];
 

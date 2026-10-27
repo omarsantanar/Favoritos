@@ -67,16 +67,5 @@ export const scenarios: Scenario[] = [
     favorable: ["Supuesto: alcance superior"], adverse: ["Cuota demasiado corta", "Pesaje y oposición anteriores no comprobados"],
     evidence: [{label:"Alcance",value:"Ilustrativo"},{label:"Pesaje",value:"Sin verificar"},{label:"Cuota",value:"Ficticia"}],
     sourceStatus: "Ficticia", marketPopularity: null
-  },
-  {
-    id: "demo-hipica", sport: "Hípica", matchup: "Ejemplar 01 · Carrera simulada", competition: "Escenario simulado · Hípica",
-    selection: "Ejemplar 01 gana", market: "Ganador", probability: 0.29, decimalOdds: 4.1, confidence: "Baja",
-    spark: [4.5,4.5,4.3,4.4,4.25,4.15,4.1],
-    brief: demoBriefs.hipica,
-    summary: "Caso artificial para ilustrar cómo se contrastan precio, pista, jinete y velocidad previa.",
-    favorable: ["Supuesto: adaptación favorable a la distancia"],
-    adverse: ["Pista y retiradas no verificadas", "Estimación muy sensible a competidores descartados"],
-    evidence: [{label:"Velocidad",value:"Ilustrativa"},{label:"Pista",value:"Sin verificar"},{label:"Retiradas",value:"Sin verificar"}],
-    sourceStatus: "Ficticia", marketPopularity: null
   }
 ];

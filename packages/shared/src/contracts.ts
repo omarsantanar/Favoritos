@@ -1,6 +1,6 @@
 /** Contratos preliminares para web y una futura aplicación móvil. */
 export type VerificationStatus = 'ficticio' | 'no_verificado' | 'verificado' | 'retirado';
-export type Discipline = 'NBA' | 'NFL' | 'MLB' | 'NHL' | 'MMA' | 'Boxeo' | 'Hípica';
+export type Discipline = 'NBA' | 'NFL' | 'MLB' | 'NHL' | 'MMA' | 'Boxeo';
 
 export interface SourceReference {
   id: string;

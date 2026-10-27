@@ -13,7 +13,7 @@ CREATE TABLE sources (
 
 CREATE TABLE events (
   id UUID PRIMARY KEY,
-  sport TEXT NOT NULL CHECK (sport IN ('NBA','NFL','MLB','NHL','MMA','Boxeo','Hípica')),
+  sport TEXT NOT NULL CHECK (sport IN ('NBA','NFL','MLB','NHL','MMA','Boxeo')),
   competition TEXT NOT NULL,
   participant_home TEXT,
   participant_away TEXT,
