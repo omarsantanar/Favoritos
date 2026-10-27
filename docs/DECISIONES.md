@@ -21,3 +21,5 @@
 | ADR-014 | 2026-10-27 | Registrar sitios oficiales y casas como consulta manual sin ingesta no autorizada. | Priorizar mercado, fuentes verificables y prohibición de operar apuestas. |
 
 | ADR-015 | 2026-10-27 | Extracción avanzada solo desde conjuntos publicados con licencias y URLs fijas; dos importadores manuales y cuatro fuentes bloqueadas para revisión. | Obtener datos reproducibles sin scraping no autorizado ni trasladar información a la web pública. |
+
+| ADR-016 | 2026-10-27 | Directorio de siete operadores DCJA y sección Líneas diarias RD con entradas revisadas y caducidad de dos horas; no scraping de casas sin permiso. | Ofrecer contexto dominicano verificable sin inventar cuotas ni transformar Favoritos en casa de apuestas. |

@@ -77,3 +77,7 @@ La hípica se retira de las disciplinas y del registro activo de fuentes. Las se
 ## Motor de descargas licenciadas (27 de octubre de 2026)
 
 Se implementa la importación manual de nflverse PBP (EPA por jugada) y SABR/Lahman Batting.csv histórico (OBP/SLG/OPS), sin scraping HTML y sin publicar datos directamente. Cuatro disciplinas pendientes por permisos: NBA, NHL, MMA, boxeo. Licencias, fuentes originales, hosts, límites de uso y procedimientos: `docs/ESTADISTICAS_AVANZADAS.md` y `config/advanced-stats-sources.json`.
+
+## Directorio RD de líneas diarias (27-10-2026)
+
+Se utiliza como fuente primaria a la [DCJA](https://www.casinos.gob.do/juegos-autorizados/juegos-de-azar-por-internet/), con siete sitios registrados para juegos por internet. Cinco están clasificados expresamente como apuestas deportivas y dos carecen de detalle en la columna modalidad. Ninguna cuota vigente fue verificable durante la consulta; la sección `Líneas diarias RD` lista la disponibilidad y solo publicará registros revisados manualmente, con caducidad 120 minutos y sin enlaces transaccionales. Ver `docs/LINEAS_DOMINICANAS.md`. Prohibido convertir el directorio en scraping automático sin permisos comprobados.
