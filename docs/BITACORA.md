@@ -1,3 +1,14 @@
+## 2026-10-27 · v0.1.4 · Preparación de ejecución web (demostración GitHub Pages)
+
+- **Objetivo:** hacer accesible una demostración interactiva de Favoritos sin requerir pago ni exponer escenarios como pronósticos reales.
+- **Estado de partida comprobado:** repositorio `omarsantanar/Favoritos`, rama `main`, commit `24d93d16962d3e20707f29c103effb51e2412e02`, CI de dos ejecuciones anteriores completado satisfactoriamente. Ningún servicio de datos ni sitio web desplegado estaba verificado.
+- **Decisión:** implementar `.github/workflows/pages.yml`, que publica únicamente el `preview/standalone.html` autocontenido y ficticio. No sustituye la app Next.js ni activa APIs reales.
+- **Archivos:** nuevo workflow de Pages, `docs/DESPLIEGUE.md`; actualizar `README.md` y esta bitácora.
+- **Verificación:** ejecutar CI de pull request y flujo de publicación una vez activada la opción Pages. Verificar URL pública y registrar resultado; **no declarar sitio activo antes**.
+- **Limitación externa:** habilitación inicial de GitHub Pages en Settings → Pages → GitHub Actions requiere acceso de configuración no disponible mediante el conector.
+- **Próximo hito:** comprobar que Pages esté activo, después conectar datos gratuitos autorizados en la app Next.js.
+
+
 ## 2026-10-26 · Verificación de publicación GitHub en Favoritos
 
 **Resultado confirmado:** primera publicación de Radar Deportivo v0.1.4 en `https://github.com/omarsantanar/Favoritos`, rama `main`, con 43 archivos de código, pruebas y documentación. Commit de importación: `80fa2d2df789aa21b03c39d71adcd0aa8ec7b465`.

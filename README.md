@@ -94,3 +94,10 @@ Para dar continuidad: leer `AGENTS.md`, `docs/MANUAL_OPERATIVO.md` y `docs/BITAC
 - Usar únicamente proveedores gratuitos con derechos adecuados, atribución y restricciones verificadas antes de mostrar datos reales públicamente.
 
 Uso informativo y recreativo para adultos, conforme a la normativa pertinente.
+
+
+## Ejecución pública del prototipo
+
+Para publicar **gratuitamente la demostración interactiva, sin datos reales**, se incluye el workflow `.github/workflows/pages.yml`. El administrador debe habilitar **Settings → Pages → GitHub Actions** y ejecutar el workflow en `main`. Instrucciones y limitaciones: [docs/DESPLIEGUE.md](docs/DESPLIEGUE.md).
+
+Para publicar la aplicación Next.js completa con sus endpoints se recomienda importar este repositorio en Vercel, que requiere autorizar el acceso de la plataforma de hosting al repositorio. **Ni GitHub Actions ni un build exitoso prueban por sí solos que exista una URL de producción accesible.**
