@@ -1,3 +1,12 @@
+## 2026-10-27 · Cierre de publicación v0.1.6 y validación
+
+- **PR:** [#3](https://github.com/omarsantanar/Favoritos/pull/3), fusionado en `main` con commit `5f7d66372cc1a4530e4b80a5c1410cb688998d24`.
+- **CI del PR:** [40496792719](https://github.com/omarsantanar/Favoritos/actions/runs/40496792719) = **success**: tests, TypeScript y compilación Next.js aprobados.
+- **Verificación remota:** `lib/models.ts` lista exclusivamente `Todos, NBA, NFL, MLB, NHL, MMA, Boxeo`. Los nuevos catálogos y tests están en el commit fusionado.
+- **Publicación web:** la tarea [40496882763](https://github.com/omarsantanar/Favoritos/actions/runs/40496882763) generó artefacto HTML, pero el paso `desplegar` quedó en **failure** al configurar Pages (sitio no habilitado). **No confirmar sitio público actualizado ni conexión Vercel**.
+- **Pendiente:** activar Pages en Settings o desplegar Next.js a Vercel y verificar la URL; mantener casa/mercado/cuota bajo validación antes de permitir líneas reales en interfaz.
+
+
 ## 2026-10-27 · v0.1.6 · Eliminar hípica y verificar webs oficiales y de cuotas
 
 - **Solicitud:** quitar la hípica y buscar portales oficiales de las disciplinas cubiertas y las webs de casas que exhiben líneas deportivas diarias.
