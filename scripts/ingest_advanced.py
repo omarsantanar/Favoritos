@@ -9,6 +9,7 @@ import argparse
 import csv
 import datetime as dt
 import gzip
+import hashlib
 import io
 import json
 import math
@@ -141,7 +142,9 @@ def aggregate_mlb(rows, season):
         if any(v < 0 for v in vals):
             continue
         bucket = by_team.setdefault(team, {key: 0 for key in ("AB", "H", "2B", "3B", "HR", "BB", "HBP", "SF")})
-        for key, value in zip(bucket, vals):
+        bucket.setdefault("stat_lines", 0)
+        bucket["stat_lines"] += 1
+        for key, value in zip(("AB", "H", "2B", "3B", "HR", "BB", "HBP", "SF"), vals):
             bucket[key] += value
         observations += 1
     if not by_team:
@@ -153,14 +156,14 @@ def aggregate_mlb(rows, season):
         bases = x["H"] + x["2B"] + 2 * x["3B"] + 3 * x["HR"]
         obp = (x["H"] + x["BB"] + x["HBP"]) / obp_den if obp_den else None
         slg = bases / at_bats if at_bats else None
-        teams.append({"team": team, "plate_stat_lines": observations, "at_bats": int(at_bats),
+        teams.append({"team": team, "plate_stat_lines": x["stat_lines"], "at_bats": int(at_bats),
                       "obp": round(obp, 4) if obp is not None else None,
                       "slg": round(slg, 4) if slg is not None else None,
                       "ops": round(obp + slg, 4) if obp is not None and slg is not None else None})
     return {"aggregation": "historical team OBP, SLG and OPS; AL/NL only, not live or Statcast",
             "observations": observations, "teams": teams}
 
-def make_snapshot(source_id, season, payload, retrieved_at=None):
+def make_snapshot(source_id, season, payload, retrieved_at=None, is_fixture=False):
     if source_id not in SOURCES:
         raise ValueError("Fuente no autorizada")
     spec = SOURCES[source_id]
@@ -169,9 +172,12 @@ def make_snapshot(source_id, season, payload, retrieved_at=None):
     content = aggregate_nfl(load_rows(payload, compressed=True), season) if source_id == "nflverse_pbp" else aggregate_mlb(load_rows(payload), season)
     return {
         "schema_version": 1, "status": "research_only", "published_prediction": False,
+        "input_mode": "fixture" if is_fixture else "licensed_download",
+        "payload_sha256": hashlib.sha256(payload).hexdigest(),
         "source_id": source_id, "sport": spec["sport"], "season": season,
         "source_url": spec["url"].format(season=season), "license": spec["licensed"],
-        "attribution": spec["credit"], "source_retrieved_at_utc": retrieved_at or dt.datetime.now(dt.timezone.utc).isoformat(),
+        "attribution": spec["credit"], "source_retrieved_at_utc": None if is_fixture else (retrieved_at or dt.datetime.now(dt.timezone.utc).isoformat()),
+        "snapshot_computed_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
         "source_data_updated_at_utc": None, "freshness_caveat": spec["freshness"],
         "market_data": None, "market_popularity": None, "model_probability": None,
         **content,
@@ -197,7 +203,7 @@ def main():
     if args.season not in spec["seasons"]:
         parser.error("Temporada no disponible; no inventar registros.")
     payload = Path(args.fixture).read_bytes() if args.fixture else download(spec["url"].format(season=args.season))
-    snapshot = make_snapshot(args.source, args.season, payload)
+    snapshot = make_snapshot(args.source, args.season, payload, is_fixture=bool(args.fixture))
     path = Path(args.out) / f"{args.source}_{args.season}.json"
     write_snapshot(snapshot, path)
     print(f"OK: {args.source} temporada={args.season}, equipos={len(snapshot['teams'])}, filas={snapshot['observations']}")
