@@ -14,3 +14,5 @@
 
 | ADR-010 | 2026-10-26 | Investigación **market-first**: líneas y tendencias verificables antes del contraste deportivo. | El mercado define qué evento merece estudio; las estadísticas validan o refutan la línea. |
 | ADR-011 | 2026-10-26 | Síntesis pública de **300 caracteres máximo**, con «Sugerencia:» obligatoria y control automático. | Lectura breve, concreta, verificable y apta para móviles. |
+
+| ADR-012 | 2026-10-27 | Navegación pública sin metodología interna ni bitácora; Observatorio, Investigación de líneas y Resultados solamente. | Evitar exposición interna en la web. GitHub público requiere política de privacidad separada. |
