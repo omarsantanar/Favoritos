@@ -8,17 +8,17 @@
 
 La búsqueda arranca **en las líneas disponibles y las tendencias verificadas**, no en una lista de favoritos deportivos. Se registra el mercado, cuota, casa, fecha y fuente; luego se contrastan estadísticas, lesiones y contexto. Cada evaluación visible se reduce a **300 caracteres como máximo, incluyendo una sugerencia explícita**; puede ser «sin selección respaldada». No se inventa popularidad ni se venden resultados ganadores.
 
-La validación reutilizable se encuentra en `lib/editorial.mjs`; `config/demo-briefs.json` contiene siete demostraciones inequívocamente ficticias. Esta versión no publica líneas reales ni dispone de feed automático.
+La validación reutilizable se encuentra en `lib/editorial.mjs`; `config/demo-briefs.json` contiene seis demostraciones inequívocamente ficticias. Esta versión no publica líneas reales ni dispone de feed automático.
 
 ## Política permanente de fuentes
 
 **Costo de datos: 0 USD/mes.** Se prohíben suscripciones, pruebas con vencimiento y servicios premium. Se utilizan exclusivamente descargas abiertas, APIs gratuitas (respetando límites y condiciones) y consulta editorial a fuentes públicas, sin scraping no autorizado. `config/fuentes-gratuitas.json` registra cada candidata y sus derechos; `docs/FUENTES_Y_LICENCIAS.md` detalla la política vigente.
 
-El piloto técnico recomendado pasa a **NFL (nflverse + NWS)**; The Odds API Starter proporciona un cupo mensual gratuito para líneas. NBA, NHL, MMA, boxeo e hípica exigirán investigación manual o datasets gratuitos expresamente permitidos. La cobertura y la popularidad no se inventarán para llenar vacíos.
+El piloto técnico recomendado pasa a **NFL (nflverse + NWS)**; The Odds API Starter proporciona un cupo mensual gratuito para líneas. NBA, NHL, MMA, boxeo exigirán investigación manual o datasets gratuitos expresamente permitidos. La cobertura y la popularidad no se inventarán para llenar vacíos.
 
 ## Estado actual
 
-Versión **0.1 — prototipo navegable**. Incluye navegación por NBA, NFL, MLB, NHL, MMA, boxeo e hípica; filtros, ordenación, búsqueda, fichas detalladas, vista de líneas, resultados públicos vacíos, API de investigación con respuesta vacía y pruebas para cálculos de probabilidad implícita y valor esperado.
+Versión **0.1 — prototipo navegable**. Incluye navegación por NBA, NFL, MLB, NHL, MMA, boxeo; filtros, ordenación, búsqueda, fichas detalladas, vista de líneas, resultados públicos vacíos, API de investigación con respuesta vacía y pruebas para cálculos de probabilidad implícita y valor esperado.
 
 **NO HAY DATOS DEPORTIVOS REALES.** Los equipos, contendientes, probabilidades y cuotas de las tarjetas de demostración son ficticios y aparecen rotulados como tales. Al desactivar «Demostración», el portal muestra correctamente que las fuentes aún no están conectadas. Ninguna tarjeta constituye un pronóstico real o una oportunidad de mercado comprobada.
 
@@ -101,3 +101,9 @@ Uso informativo y recreativo para adultos, conforme a la normativa pertinente.
 Para publicar **gratuitamente la demostración interactiva, sin datos reales**, se incluye el workflow `.github/workflows/pages.yml`. El administrador debe habilitar **Settings → Pages → GitHub Actions** y ejecutar el workflow en `main`. Instrucciones y limitaciones: [docs/DESPLIEGUE.md](docs/DESPLIEGUE.md).
 
 Para publicar la aplicación Next.js completa con sus endpoints se recomienda importar este repositorio en Vercel, que requiere autorizar el acceso de la plataforma de hosting al repositorio. **Ni GitHub Actions ni un build exitoso prueban por sí solos que exista una URL de producción accesible.**
+
+## Sitios oficiales y líneas de mercado
+
+Favoritos cubre **NBA, NFL, MLB, NHL, MMA y boxeo**. La hípica fue eliminada del código y catálogos activos en v0.1.6.
+
+Consulta [el directorio editorial](docs/DIRECTORIO_DE_FUENTES.md), `config/portales-oficiales.json` y `config/casas-observacion.json`. Son fuentes para **consulta manual** sin conexión automática, licencia de scraping ni promociones de apuestas. Los análisis públicos conservan el límite de 300 caracteres con sugerencia.

@@ -4,8 +4,8 @@ import fs from 'node:fs';
 import {validateEditorialBrief, countCharacters, MAX_BRIEF_CHARS} from '../lib/editorial.mjs';
 const sample = {market:'Ganador', outcome:'Aurora gana', decimalOdds:1.88, book:'Casa simulada', observedAtUtc:'2026-10-26T19:00:00Z', sourceId:'demo'};
 const briefs = JSON.parse(fs.readFileSync(new URL('../config/demo-briefs.json', import.meta.url), 'utf8'));
-test('siete ejemplos solo ficticios cumplen límite y sugerencia',()=>{
-  assert.equal(Object.keys(briefs).length,7);
+test('seis ejemplos solo ficticios cumplen límite y sugerencia',()=>{
+  assert.equal(Object.keys(briefs).length,6);
   for (const [sport,brief] of Object.entries(briefs)) {
     const result=validateEditorialBrief(brief,sample);
     assert.ok(result.valid, `${sport}: ${result.errors.join('; ')}`);

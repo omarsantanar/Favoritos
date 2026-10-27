@@ -12,7 +12,7 @@ Next.js App Router + React + TypeScript. Renderizado inicial por servidor y pane
 Fuentes GRATUITAS con permisos ──> Conectores/validación ──> PostgreSQL (proveniencia)
 Calendario y lesiones  ───┤                           │
 Cuotas por mercado     ───┤                           ├──> Motor Python reproducible
-Clima/hípica/MMA       ───┘                           │             │
+Clima/MMA/boxeo       ───┘                           │             │
                                                       ├<── P(modelo), método, versión
                                                       │
                                       API pública de investigación/consulta

@@ -1,3 +1,16 @@
+## 2026-10-27 · v0.1.6 · Eliminar hípica y verificar webs oficiales y de cuotas
+
+- **Solicitud:** quitar la hípica y buscar portales oficiales de las disciplinas cubiertas y las webs de casas que exhiben líneas deportivas diarias.
+- **Cobertura vigente:** NBA, NFL, MLB, NHL, MMA y boxeo. La hípica se ha eliminado de tipos TypeScript, contratos compartidos, demostración interactiva, modelo SQL, escenarios, briefs y catálogo de fuentes activas. La bitácora histórica no se modifica retroactivamente.
+- **Nuevos archivos:** `docs/DIRECTORIO_DE_FUENTES.md`, `config/portales-oficiales.json`, `config/casas-observacion.json`, `tests/six-sports-sources.test.mjs`.
+- **Ligas y promotoras:** NBA, NFL, MLB y NHL oficiales; UFC, PFL, ONE Championship para MMA; WBA, WBC, WBO e IBF para boxeo. En boxeo y MMA no hay organizador único para todas las carteleras.
+- **Casas de cuotas:** DraftKings, FanDuel, BetMGM, Caesars, BetRivers, Circa Sports y bet365, cuyos accesos son parciales o restringidos por región. El acceso a bet365 devolvió HTTP 451.
+- **Regla:** solo fuentes gratuitas; páginas para referencia manual y contraste, **sin scraping, importaciones automáticas de casas ni enlaces de apuesta en la web pública**. No se instaló un feed de líneas en vivo.
+- **Pruebas:** añadir controles de regresión para seis deportes, integridad de URLs, sin feed habilitado y HTML autocontenido. Verificar resultados CI, typecheck y build en PR antes de fusionar.
+- **Límites anteriores:** sugerencia pública de 300 caracteres y método basado en líneas primero; la documentación técnica no aparece en la navegación pública.
+- **Publicación:** todavía depende del alojamiento conectado; no atribuir despliegue a solo modificar GitHub.
+
+
 ## 2026-10-27 · Comprobación y cierre de corrección de interfaz pública
 
 - **Corrección incorporada:** [PR #2](https://github.com/omarsantanar/Favoritos/pull/2) fusionado en `main`, commit `a5b8750b49b5df89760453e75c3225f2998fe169`.

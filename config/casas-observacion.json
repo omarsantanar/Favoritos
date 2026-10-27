@@ -1,0 +1,64 @@
+{
+  "version": "0.1.6",
+  "checked_on": "2026-10-27",
+  "policy": "Referencias internas para observar mercados, nunca enlaces de apuesta al portal, ni captura automática sin permiso.",
+  "automatic_ingestion_enabled": false,
+  "providers": [
+    {
+      "id": "draftkings",
+      "name": "DraftKings Sportsbook",
+      "url": "https://sportsbook.draftkings.com/",
+      "note": "Líneas deportivas y mercados visibles por jurisdicción.",
+      "access": "consulta_manual_cuando_disponible",
+      "automated_feed_approved": false
+    },
+    {
+      "id": "fanduel",
+      "name": "FanDuel Sportsbook",
+      "url": "https://sportsbook.fanduel.com/",
+      "note": "Sitio JS; consulta de líneas puede requerir navegador.",
+      "access": "consulta_manual_cuando_disponible",
+      "automated_feed_approved": false
+    },
+    {
+      "id": "betmgm",
+      "name": "BetMGM",
+      "url": "https://www.betmgm.com/en/sports",
+      "note": "Mercados por deporte y jurisdicción.",
+      "access": "consulta_manual_cuando_disponible",
+      "automated_feed_approved": false
+    },
+    {
+      "id": "caesars",
+      "name": "Caesars Sportsbook",
+      "url": "https://sportsbook.caesars.com/",
+      "note": "Líneas, totales y props sujeto a jurisdicción.",
+      "access": "consulta_manual_cuando_disponible",
+      "automated_feed_approved": false
+    },
+    {
+      "id": "betrivers",
+      "name": "BetRivers",
+      "url": "https://www.betrivers.com/",
+      "note": "Sitio web oficial, acceso parcial según región.",
+      "access": "consulta_manual_cuando_disponible",
+      "automated_feed_approved": false
+    },
+    {
+      "id": "circa",
+      "name": "Circa Sports",
+      "url": "https://www.circasports.com/",
+      "note": "Mercado y menú regional, no feed autorizado.",
+      "access": "consulta_manual_cuando_disponible",
+      "automated_feed_approved": false
+    },
+    {
+      "id": "bet365",
+      "name": "bet365",
+      "url": "https://www.bet365.com/",
+      "note": "Acceso regional restringido: HTTP 451 en la consulta. No eludir.",
+      "access": "consulta_manual_cuando_disponible",
+      "automated_feed_approved": false
+    }
+  ]
+}

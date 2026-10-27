@@ -1,0 +1,129 @@
+{
+  "version": "0.1.6",
+  "checked_on": "2026-10-27",
+  "policy": "Investigación editorial gratuita; no implica derecho de scraping ni republicación.",
+  "disciplines": [
+    {
+      "sport": "NBA",
+      "official_name": "National Basketball Association",
+      "websites": [
+        {
+          "label": "Calendario",
+          "url": "https://www.nba.com/schedule"
+        },
+        {
+          "label": "Estadísticas",
+          "url": "https://www.nba.com/stats"
+        },
+        {
+          "label": "Reportes oficiales",
+          "url": "https://official.nba.com/"
+        }
+      ],
+      "ingestion": "not_connected"
+    },
+    {
+      "sport": "NFL",
+      "official_name": "National Football League",
+      "websites": [
+        {
+          "label": "Calendario",
+          "url": "https://www.nfl.com/schedules"
+        },
+        {
+          "label": "Lesiones",
+          "url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "label": "Estadísticas",
+          "url": "https://www.nfl.com/stats/"
+        }
+      ],
+      "ingestion": "not_connected"
+    },
+    {
+      "sport": "MLB",
+      "official_name": "Major League Baseball",
+      "websites": [
+        {
+          "label": "Calendario",
+          "url": "https://www.mlb.com/schedule"
+        },
+        {
+          "label": "Lanzadores probables",
+          "url": "https://www.mlb.com/probable-pitchers"
+        },
+        {
+          "label": "Baseball Savant",
+          "url": "https://baseballsavant.mlb.com/"
+        }
+      ],
+      "ingestion": "not_connected"
+    },
+    {
+      "sport": "NHL",
+      "official_name": "National Hockey League",
+      "websites": [
+        {
+          "label": "Calendario",
+          "url": "https://www.nhl.com/schedule"
+        },
+        {
+          "label": "Estadísticas",
+          "url": "https://www.nhl.com/stats"
+        },
+        {
+          "label": "NHL EDGE",
+          "url": "https://www.nhl.com/edge"
+        }
+      ],
+      "ingestion": "not_connected"
+    },
+    {
+      "sport": "MMA",
+      "official_name": "UFC, PFL y ONE Championship",
+      "websites": [
+        {
+          "label": "UFC Events",
+          "url": "https://www.ufc.com/events"
+        },
+        {
+          "label": "UFCStats",
+          "url": "http://ufcstats.com/"
+        },
+        {
+          "label": "PFL",
+          "url": "https://pflmma.com/"
+        },
+        {
+          "label": "ONE",
+          "url": "https://www.onefc.com/events/"
+        }
+      ],
+      "ingestion": "not_connected"
+    },
+    {
+      "sport": "Boxeo",
+      "official_name": "Organismos sancionadores WBA, WBC, WBO, IBF",
+      "websites": [
+        {
+          "label": "WBA",
+          "url": "https://www.wbaboxing.com/es/"
+        },
+        {
+          "label": "WBC",
+          "url": "https://wbcboxing.com/en/"
+        },
+        {
+          "label": "WBO",
+          "url": "https://wboboxing.com/"
+        },
+        {
+          "label": "IBF",
+          "url": "https://www.ibf-usba-boxing.com/"
+        }
+      ],
+      "ingestion": "not_connected"
+    }
+  ]
+}
