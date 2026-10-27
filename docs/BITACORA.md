@@ -1,3 +1,14 @@
+## 2026-10-27 · Auditoría de publicación y solicitud de conexión con Vercel
+
+- **Solicitud:** continuar Favoritos desde GitHub, conectar Vercel y verificar que el despliegue sea accesible.
+- **Repositorio y versión comprobados:** `omarsantanar/Favoritos` en `main`, commit `8013f8d374ca26c3974b13c7d9b464d0d73aef12`; flujo de CI [40501480161](https://github.com/omarsantanar/Favoritos/actions/runs/40501480161) completado en estado **success**.
+- **Estructura inspeccionada:** código Next.js, APIs `/api/health`, `/api/research` y `/api/domestic-lines`, archivos de prueba y workflows presentes. Sin evidencia de archivo de configuración `.vercel/project.json` dentro del repositorio; su ausencia por sí sola no demuestra que no exista un proyecto externo.
+- **Estado de conexión:** la aplicación Vercel está disponible en el catálogo, pero no está conectada/autorizada a esta sesión. Se pidió autorización al usuario mediante el flujo de conexión; **no se obtuvo acceso a proyectos ni despliegues de su cuenta Vercel**.
+- **Verificación pública:** búsqueda de una URL del proyecto asociada a `omarsantanar/Favoritos` sin resultado verificable; no se inventa ni presenta una dirección `*.vercel.app` como existente. Estado de GitHub Pages previamente registrado: falla de despliegue al configurar Pages.
+- **Conclusión:** pruebas de código aprobadas, **producción no verificada**. No se creó despliegue ni se conectó ninguna cuenta por deducción. No hubo cambios de funcionalidad en el sitio.
+- **Acción requerida:** autorizar Vercel en ChatGPT o pasar a Work con navegador autenticado; importar `omarsantanar/Favoritos` como Next.js con raíz `./`, rama `main`, y revisar estado Ready, URL real y funcionamiento HTTP de `/`, `/api/health`, `/api/research` y `/api/domestic-lines`.
+- **Protección:** no copiar claves o tokens al repositorio público; el usuario debe autorizar cualquier conexión con proveedor externo.
+
 ## 2026-10-27 · Cierre v0.3.0: registro RD y líneas de observación
 
 - **Integración en main:** [PR #5](https://github.com/omarsantanar/Favoritos/pull/5), commit de fusión `d10633baea0983cd7e4c8aa20d5bed2d7e7e6510`.
