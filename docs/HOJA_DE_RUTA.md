@@ -31,3 +31,7 @@
 ## v1.0 · Aplicación móvil (fase posterior)
 - Contratos comunes con Expo + React Native.
 - Guardados, eventos seguidos y avisos informativos sin incentivos a apuestas impulsivas.
+
+## 2026-10-27 · Alcance actualizado
+- Retirar hípica y mantener NBA, NFL, MLB, NHL, MMA y boxeo.
+- Mantener directorio de sitios oficiales y webs de casas, sin automatizar scraping ni ofrecer enlaces para apostar en el portal.

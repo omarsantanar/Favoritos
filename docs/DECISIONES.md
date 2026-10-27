@@ -16,3 +16,6 @@
 | ADR-011 | 2026-10-26 | Síntesis pública de **300 caracteres máximo**, con «Sugerencia:» obligatoria y control automático. | Lectura breve, concreta, verificable y apta para móviles. |
 
 | ADR-012 | 2026-10-27 | Navegación pública sin metodología interna ni bitácora; Observatorio, Investigación de líneas y Resultados solamente. | Evitar exposición interna en la web. GitHub público requiere política de privacidad separada. |
+
+| ADR-013 | 2026-10-27 | Retirar hípica; seis disciplinas activas. | Cambio de alcance solicitado por el usuario. |
+| ADR-014 | 2026-10-27 | Registrar sitios oficiales y casas como consulta manual sin ingesta no autorizada. | Priorizar mercado, fuentes verificables y prohibición de operar apuestas. |

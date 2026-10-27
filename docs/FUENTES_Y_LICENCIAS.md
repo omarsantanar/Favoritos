@@ -16,7 +16,7 @@ El inventario con estados de integración es `config/fuentes-gratuitas.json`. Lo
 |---|---|---|---|
 | [nflverse](https://github.com/nflverse/nflverse-data) | NFL: jugadas, históricos, rósters, estadísticas y EPA calculable | Descargas gratuitas | Mayoría de datasets CC BY 4.0; FTN CC BY-SA 4.0. Revisar licencia individual y dar atribución a nflverse y proveedor original. |
 | [SABR/Lahman](https://sabr.org/lahman-database/) | MLB: históricos para modelos básicos | CSV/SQL gratis; actualización típicamente anual | CC BY-SA 3.0, atribución y compartir derivados en términos aplicables; verificar contenido de terceros. No reemplaza lineups ni estadísticas de hoy. |
-| [NWS API](https://www.weather.gov/documentation/services-web-api) | Clima horario en estadios y pistas de EE. UU. | Gratis, sin cuota contractual; rate limits razonables | Datos públicos; atribuir claramente y no sugerir aval de NOAA/NWS. Pista de hípica se confirma con reporte del hipódromo. |
+| [NWS API](https://www.weather.gov/documentation/services-web-api) | Clima horario en estadios y pistas de EE. UU. | Gratis, sin cuota contractual; rate limits razonables | Datos públicos; atribuir claramente y no sugerir aval de NOAA/NWS. NWS no reemplaza la información de sede deportiva. |
 | [The Odds API — Starter](https://the-odds-api.com/) | Cuotas de mercado y observación de variaciones | **500 créditos/mes gratis**, sin históricos gratuitos; cobertura de deportes/mercados sujeta a disponibilidad | Términos [31 agosto 2026](https://the-odds-api.com/terms-and-conditions.html): se permite mostrar cuotas y usar en modelos, no revender/replicar un feed bruto. Cache y presupuesto de créditos estrictos. **No confundir con `theoddsapi.com`**, proveedor distinto. |
 
 Para un MVP fiable, **NFL + nflverse + NWS** es el mejor piloto totalmente reproducible; las cuotas se añaden con The Odds API gratis y cadencia limitada. MLB históricos pueden estudiarse en paralelo. No afirmar cobertura universal diaria por utilizar un API gratuito.
@@ -31,9 +31,8 @@ Para un MVP fiable, **NFL + nflverse + NWS** es el mejor piloto totalmente repro
 | NHL | [NHL EDGE](https://www.nhl.com/edge), [MoneyPuck](https://moneypuck.com/data.htm) | MoneyPuck permite datos gratis para uso no comercial y periodistas *ad hoc* con crédito; **no reutilizar como feed automático del portal comercial sin permiso**. |
 | MMA | [UFCStats](http://ufcstats.com/), [UFC eventos](https://www.ufc.com/events) | Estadísticas para comprobación puntual; automatización y republicación sujetas a derechos. [UFC Terms](https://www.ufc.com/news/terms-use) prohíbe ciertos accesos automáticos a UFC.com. |
 | Boxeo | [BoxRec](https://boxrec.com/), webs de comisiones y carteleras públicas | Acceso visible condicionado por cuentas/página; no usar módulos de pago ni scraping no autorizado. |
-| Hípica | [Equibase](https://www.equibase.com/), hipódromos y autoridades de carrera | Solo entradas, resultados y scratches gratuitamente visibles; no asumir distribución libre ni feed público. |
 
-**NBA, NHL, MMA, boxeo e hípica** no disponen todavía en el proyecto de una fuente integral gratuita con permiso comprobado para alimentar automáticamente todos los campos del análisis. El portal debe priorizar revisión manual y dejar los campos no disponibles en blanco.
+**NBA, NHL, MMA y boxeo** no disponen todavía en el proyecto de una fuente integral gratuita con permiso comprobado para alimentar automáticamente todos los campos del análisis. El portal debe priorizar revisión manual y dejar los campos no disponibles en blanco.
 
 ## Capa C. Popularidad de líneas
 
@@ -47,7 +46,7 @@ Para un MVP fiable, **NFL + nflverse + NWS** es el mejor piloto totalmente repro
 1. `nflverse` histórico/estaciones con licencia y atribución, más NWS horarios, en un piloto NFL.
 2. The Odds API Starter: consultar presupuesto de créditos, realizar caché, almacenar `bookmaker`, `market`, `odds`, `observed_at` y no prometer precios siempre actuales. Si excede 500 créditos/mes, detener actualización en vez de cobrar o usar otra API sin verificar.
 3. SABR Lahman para modelado histórico MLB; reunir datos actuales mediante investigación de consulta pública y verificación independiente.
-4. NBA, NHL, MMA, boxeo e hípica con fichas de investigación manual hasta disponer de datasets gratuitos legítimamente utilizables.
+4. NBA, NHL, MMA y boxeo con fichas de investigación manual hasta disponer de datasets gratuitos legítimamente utilizables.
 5. Popularidad de mercado solo cuando haya datos públicos verificables que puedan citarse legítimamente; de lo contrario, declarar indisponible.
 
 ## Controles de desarrollo
@@ -70,3 +69,7 @@ Para un MVP fiable, **NFL + nflverse + NWS** es el mejor piloto totalmente repro
 - VSiN: https://vsin.com/sports/ ; https://vsin.com/betting-splits/
 
 **Estado de ejecución:** fuentes investigadas/documentadas; ninguna API ni importación nueva conectada, ningún pronóstico real producido. La versión 0.1 continúa siendo una demostración con datos ficticios.
+
+## 27 de octubre de 2026 — Nuevo alcance y directorio
+
+La hípica se retira de las disciplinas y del registro activo de fuentes. Las seis coberturas son NBA, NFL, MLB, NHL, MMA y boxeo. El directorio de portales oficiales y webs de casas está en `docs/DIRECTORIO_DE_FUENTES.md`; los catálogos estructurados en `config/portales-oficiales.json` y `config/casas-observacion.json`. Todos los sitios de casas se califican como **consulta manual** y no se han conectado APIs automáticas ni publicado precios reales.

@@ -1,6 +1,6 @@
 {
-  "version": "0.1.2",
-  "review_date": "2026-10-26",
+  "version": "0.1.6",
+  "review_date": "2026-10-27",
   "rule": "Fuentes de datos exclusivamente sin costo; sin licencias de pago, upgrades, pruebas temporales ni extracción no autorizada.",
   "publication_policy": {
     "no_real_bets": true,
@@ -44,14 +44,13 @@
       "sports": [
         "NFL",
         "MLB",
-        "Hípica",
         "Otros eventos exteriores en EE. UU."
       ],
       "access": "api_abierta_gratuita",
       "cost_usd_month": 0,
       "integration": "candidate_automatic",
       "rights": "Datos públicos para cualquier fin lícito, rate limits y sin implicar aval del gobierno",
-      "coverage": "Pronósticos horarios, observaciones, alertas; no determina estado oficial de la pista"
+      "coverage": "Pronósticos horarios, observaciones y alertas para eventos al aire libre, principalmente NFL y MLB."
     },
     {
       "id": "the_odds_api_starter",
@@ -149,19 +148,6 @@
       "integration": "manual_only_pending_rights",
       "rights": "Acceso limitado por sitio/cuenta; no automatizar ni utilizar apartados de pago",
       "coverage": "Historial y récords consultables según disponibilidad"
-    },
-    {
-      "id": "equibase",
-      "name": "Equibase (secciones públicas)",
-      "url": "https://www.equibase.com/",
-      "sports": [
-        "Hípica"
-      ],
-      "access": "web_publica_parcial",
-      "cost_usd_month": 0,
-      "integration": "manual_only_pending_rights",
-      "rights": "No usar productos de pago; verificar permisos de reproducción/extracción",
-      "coverage": "Inscripciones, retiros y reportes accesibles sin pago, según carrera"
     },
     {
       "id": "vsin_free",
