@@ -1,0 +1,193 @@
+{
+  "version": "0.1.2",
+  "review_date": "2026-10-26",
+  "rule": "Fuentes de datos exclusivamente sin costo; sin licencias de pago, upgrades, pruebas temporales ni extracción no autorizada.",
+  "publication_policy": {
+    "no_real_bets": true,
+    "no_paid_feeds": true,
+    "no_unapproved_scraping": true,
+    "no_unverified_public_betting_splits": true,
+    "show_missing_instead_of_guessing": true,
+    "source_attribution_required": true
+  },
+  "sources": [
+    {
+      "id": "nflverse",
+      "name": "nflverse-data",
+      "url": "https://github.com/nflverse/nflverse-data",
+      "sports": [
+        "NFL"
+      ],
+      "access": "descarga_gratuita",
+      "cost_usd_month": 0,
+      "integration": "candidate_automatic",
+      "rights": "Revisar licencia de cada dataset: mayoría CC BY 4.0, FTN CC BY-SA 4.0",
+      "coverage": "Play-by-play, EPA derivable, estadísticas, rósters; frecuencia varía"
+    },
+    {
+      "id": "sabr_lahman",
+      "name": "SABR Lahman",
+      "url": "https://sabr.org/lahman-database/",
+      "sports": [
+        "MLB"
+      ],
+      "access": "descarga_gratuita",
+      "cost_usd_month": 0,
+      "integration": "candidate_batch",
+      "rights": "CC BY-SA 3.0 y atribución; respetar share-alike, verificar tablas de terceros",
+      "coverage": "Históricos hasta 2025 en la edición revisada; no es feed en vivo"
+    },
+    {
+      "id": "nws",
+      "name": "National Weather Service",
+      "url": "https://www.weather.gov/documentation/services-web-api",
+      "sports": [
+        "NFL",
+        "MLB",
+        "Hípica",
+        "Otros eventos exteriores en EE. UU."
+      ],
+      "access": "api_abierta_gratuita",
+      "cost_usd_month": 0,
+      "integration": "candidate_automatic",
+      "rights": "Datos públicos para cualquier fin lícito, rate limits y sin implicar aval del gobierno",
+      "coverage": "Pronósticos horarios, observaciones, alertas; no determina estado oficial de la pista"
+    },
+    {
+      "id": "the_odds_api_starter",
+      "name": "The Odds API (Starter)",
+      "url": "https://the-odds-api.com/",
+      "sports": [
+        "NBA",
+        "NFL",
+        "MLB",
+        "NHL",
+        "MMA",
+        "Boxeo",
+        "según disponibilidad"
+      ],
+      "access": "plan_gratuito_con_cupo",
+      "cost_usd_month": 0,
+      "integration": "candidate_automatic_quota_limited",
+      "rights": "Permitido análisis y visualización bajo términos; no redistribuir datos como producto independiente",
+      "coverage": "500 créditos por mes; diversas líneas/mercados; sin histórico en plan gratuito"
+    },
+    {
+      "id": "nba_stats",
+      "name": "NBA Stats + reportes oficiales",
+      "url": "https://www.nba.com/stats",
+      "sports": [
+        "NBA"
+      ],
+      "access": "web_publica",
+      "cost_usd_month": 0,
+      "integration": "manual_only",
+      "rights": "NBA Stats prohíbe descargas; términos también restringen usos comerciales y vinculados a apuestas; no automatizar",
+      "coverage": "Ratings, box scores, lesiones para revisión editorial, no feed abierto aprobado"
+    },
+    {
+      "id": "baseball_savant",
+      "name": "MLB Baseball Savant",
+      "url": "https://baseballsavant.mlb.com/",
+      "sports": [
+        "MLB"
+      ],
+      "access": "web_publica",
+      "cost_usd_month": 0,
+      "integration": "manual_only_pending_rights",
+      "rights": "Revisar términos antes de ingesta automatizada/republicación",
+      "coverage": "Statcast, calidad de contacto, perfiles y comparativas"
+    },
+    {
+      "id": "nhl_edge",
+      "name": "NHL EDGE",
+      "url": "https://www.nhl.com/edge",
+      "sports": [
+        "NHL"
+      ],
+      "access": "web_publica",
+      "cost_usd_month": 0,
+      "integration": "manual_only_pending_rights",
+      "rights": "Consulta pública no equivale a API ni redistribución permitida",
+      "coverage": "Seguimiento y estadísticas avanzadas disponibles en la web"
+    },
+    {
+      "id": "moneypuck",
+      "name": "MoneyPuck",
+      "url": "https://moneypuck.com/data.htm",
+      "sports": [
+        "NHL"
+      ],
+      "access": "datos_descargables_condicionados",
+      "cost_usd_month": 0,
+      "integration": "manual_ad_hoc_only",
+      "rights": "Gratis para uso no comercial y usos periodísticos ad-hoc con atribución; no emplear como feed de plataforma comercial sin permiso",
+      "coverage": "Goles esperados, porteros, jugadores, equipos"
+    },
+    {
+      "id": "ufcstats",
+      "name": "UFCStats",
+      "url": "http://ufcstats.com/",
+      "sports": [
+        "MMA"
+      ],
+      "access": "web_publica",
+      "cost_usd_month": 0,
+      "integration": "manual_only_pending_rights",
+      "rights": "No asumir permiso de scraping ni de redistribución",
+      "coverage": "Golpes, derribos, sumisiones y resultados"
+    },
+    {
+      "id": "boxrec",
+      "name": "BoxRec (datos públicos)",
+      "url": "https://boxrec.com/",
+      "sports": [
+        "Boxeo"
+      ],
+      "access": "web_publica_parcial",
+      "cost_usd_month": 0,
+      "integration": "manual_only_pending_rights",
+      "rights": "Acceso limitado por sitio/cuenta; no automatizar ni utilizar apartados de pago",
+      "coverage": "Historial y récords consultables según disponibilidad"
+    },
+    {
+      "id": "equibase",
+      "name": "Equibase (secciones públicas)",
+      "url": "https://www.equibase.com/",
+      "sports": [
+        "Hípica"
+      ],
+      "access": "web_publica_parcial",
+      "cost_usd_month": 0,
+      "integration": "manual_only_pending_rights",
+      "rights": "No usar productos de pago; verificar permisos de reproducción/extracción",
+      "coverage": "Inscripciones, retiros y reportes accesibles sin pago, según carrera"
+    },
+    {
+      "id": "vsin_free",
+      "name": "VSiN (páginas públicas)",
+      "url": "https://vsin.com/betting-splits/",
+      "sports": [
+        "varios"
+      ],
+      "access": "web_publica_parcial",
+      "cost_usd_month": 0,
+      "integration": "manual_only_no_automatic_import",
+      "rights": "Los splits completos pueden ser Pro y no se puede asumir una licencia de republicación",
+      "coverage": "A veces porcentajes públicos visibles; alcance parcial por casa"
+    },
+    {
+      "id": "action_network_public",
+      "name": "Action Network (páginas públicas)",
+      "url": "https://www.actionnetwork.com/public-betting",
+      "sports": [
+        "varios"
+      ],
+      "access": "web_publica_parcial",
+      "cost_usd_month": 0,
+      "integration": "manual_only_no_automatic_import",
+      "rights": "Verificar acceso y condiciones; no scraping de porcentajes ni replicación automatizada",
+      "coverage": "Tendencias parciales si están visibles públicamente"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071014">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Radar Deportivo | Prototipo v0.1</title>
+  <link rel="icon" href="../public/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../app/globals.css">
+  <style>
+    .offline-icon{display:grid;place-items:center;font-size:23px;font-weight:800;color:#85ebc4}
+    .sport-nav-item.chosen{color:#85ebc4}
+    .preview-stat{border:1px solid #25453b;background:#0e2825;color:#a3d9c3;border-radius:6px;padding:5px 8px;font-size:9px;font-weight:700}
+    .demo-toggle{cursor:pointer}.scenario-card:hover{transform:translateY(-2px);border-color:#42776b;transition:.16s}
+    .nav-symbol{font-size:17px;width:18px;text-align:center}
+    .brand-icon{font-size:23px;font-weight:900}
+    #dialog[hidden],.view-panel[hidden]{display:none!important}
+    button:focus-visible,a:focus-visible{outline:2px solid #85ebc4;outline-offset:2px}
+    @media(max-width:700px){.hero-art{pointer-events:none}.sidebar{z-index:20}.overlay-for-menu{position:fixed;inset:60px 0 0;z-index:18;background:#0007}.overlay-for-menu[hidden]{display:none}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-icon">◎</div><div><div class="brand-name">RADAR<span>DEPORTIVO</span></div><div class="brand-tag">OBSERVATORIO ESTADÍSTICO</div></div></div>
+    <div class="side-section-label">PLATAFORMA</div>
+    <nav class="side-nav" aria-label="Secciones">
+      <button class="side-link active" data-view="radar"><span class="nav-symbol">▦</span><span>Observatorio</span><span class="active-mark"></span></button>
+      <button class="side-link" data-view="lineas"><span class="nav-symbol">⌁</span><span>Investigación de líneas</span></button>
+      <button class="side-link" data-view="historial"><span class="nav-symbol">◷</span><span>Historial auditado</span></button>
+      <button class="side-link" data-view="metodologia"><span class="nav-symbol">▤</span><span>Metodología</span></button>
+      <button class="side-link" data-view="bitacora"><span class="nav-symbol">▣</span><span>Bitácora</span></button>
+    </nav>
+    <div class="side-section-label sports-title">DISCIPLINAS</div>
+    <div class="sport-nav" id="sidebar-sports"></div>
+    <div class="sidebar-bottom"><div class="compliance"><span aria-hidden="true">✓</span><div><strong>Investigación independiente</strong><span>Sin apuestas ni depósitos</span></div></div><p>EDICIÓN DE DESARROLLO <strong>0.1.0</strong></p></div>
+  </aside>
+  <div class="overlay-for-menu" id="menu-overlay" hidden></div>
+  <div class="main-area">
+    <header class="topbar"><div class="topbar-left"><button class="mobile-menu" id="mobile-menu" aria-label="Abrir menú">☰</button><span class="desktop-path">OBSERVATORIO</span><span class="desktop-path">›</span><strong id="breadcrumb">Observatorio</strong></div><div class="topbar-right"><span class="timezone" id="sd-date">Santo Domingo · UTC−4</span><span class="prototype-pill"><span></span> PROTOTIPO v0.1</span></div></header>
+    <main class="content">
+      <div class="notice-banner"><span style="font-size:20px" aria-hidden="true">⚗</span><p><strong>Entorno de demostración.</strong> No hay proveedores conectados. Equipos, cuotas y porcentajes son totalmente ficticios. No son sugerencias deportivas reales.</p></div>
+      <section class="hero"><div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span><span id="hero-eyebrow">INTELIGENCIA DEPORTIVA</span></div><h1 id="hero-title">Primero las líneas. Después los datos.</h1><p id="hero-desc">Partimos de las líneas y tendencias verificables, contrastamos estadísticas y publicamos sugerencias de máximo 300 caracteres.</p><div class="hero-tags"><span>✓ Fuentes auditables</span><span>▥ Probabilidades explicadas</span><span>◎ Sin apuestas</span></div></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="orbit-dot"></div><span style="font-size:82px;color:#85ebc4">◎</span><span>RESEARCH / 0.1</span></div></section>
+      <section class="view-panel" id="panel-radar">
+        <div class="metric-grid" id="metric-grid"></div>
+        <section class="section-content"><div class="section-heading"><div><span class="section-overline">CENTRO DE ANÁLISIS</span><h2>Radar de líneas deportivas</h2><p>Primero mercado; después estadísticas. Cada sugerencia, hasta 300 caracteres.</p></div><label class="demo-toggle"><span>Demostración</span><input type="checkbox" id="demo-toggle" checked><span class="switch"></span></label></div>
+          <div class="filters"><div class="sports-scroll" id="sports-filters"></div><div class="filters-secondary"><label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar escenario..." aria-label="Buscar escenario"></label><label class="sort-field"><span>≡</span><select id="sort" aria-label="Ordenar"><option value="mercado">Mercado primero</option><option value="valor">Valor esperado*</option><option value="probabilidad">Probabilidad*</option><option value="deporte">Deporte</option></select><span>⌄</span></label><button class="value-filter" id="positive-filter">EV positivo*</button></div></div>
+          <div class="results-note"><span id="result-count">7 escenarios ficticios · ningún evento real</span><span>* Números sintéticos</span></div>
+          <div class="scenario-grid" id="cards"></div>
+        </section>
+        <section class="insight-grid"><div class="insight-card"><div class="insight-symbol">⌁</div><span>LECTURA DE MERCADO</span><h3>Una línea que se mueve no revela por sí sola la tendencia del público.</h3><p>Para identificar líneas populares se requieren métricas de volumen o distribución verificables. Sin esos datos, no afirmamos popularidad.</p><button data-view="metodologia">Conocer el criterio →</button></div><div class="insight-card quote"><span>CRITERIO EDITORIAL</span><h3>“Un favorito no siempre representa una oportunidad de valor”.</h3><p>El resultado más probable y el precio ofrecido son preguntas distintas. Ambas deben investigarse por separado.</p><button data-view="lineas">Examinar las líneas →</button></div></section>
+      </section>
+      <section class="view-panel section-content" id="panel-lineas" hidden><div class="section-heading"><div><span class="section-overline">TABLA COMPARATIVA</span><h2>Observación de precios y probabilidades</h2><p>Las cifras son casos inventados y no corresponden a casas ni eventos reales.</p></div></div><div id="table-holder"></div></section>
+      <section class="view-panel" id="panel-historial" hidden><div class="history-box"><div class="history-symbol">◷</div><h2>Todavía no hay pronósticos publicados</h2><p>El historial permanecerá vacío hasta que existan pronósticos fechados, sellados y respaldados por fuentes reales. La demostración no contabiliza aciertos ni errores.</p><div class="history-labels"><span>✓ Registro inalterable</span><span>▥ Calibración</span><span>◷ Hora de publicación</span></div></div></section>
+      <section class="view-panel essay-grid" id="panel-metodologia" hidden>
+        <section class="essay-panel"><span class="panel-kicker">01 / PRINCIPIOS</span><h2>Mercado → contraste → sugerencia.</h2><p>Primero registramos línea, selección, cuota, casa y fecha. Luego investigamos estadísticas, lesiones y contexto. El análisis publicado tendrá 300 caracteres como máximo y una sugerencia explícita.</p><div class="rule-stack"><div><span>✓</span><span>No publicamos estadísticas sin verificar.</span></div><div><span>!</span><span>No inventamos porcentajes deportivos.</span></div><div><span>◎</span><span>Si no existe ventaja defendible: sin selección.</span></div></div></section>
+        <section class="essay-panel soft"><span class="panel-kicker">02 / MATEMÁTICA</span><h2>Probabilidad ≠ precio.</h2><div class="formula"><span>Probabilidad implícita</span><strong>1 / cuota decimal</strong></div><div class="formula"><span>Valor esperado por unidad</span><strong>P(modelo) × cuota − 1</strong></div><p>Un EV positivo no asegura resultados. Para retirar el margen de mercado hay que examinar todas las opciones del mismo mercado.</p></section>
+        <section class="essay-panel"><span class="panel-kicker">03 / TENDENCIAS</span><h2>Popularidad no es movimiento.</h2><p>El cambio de una línea no revela por sí mismo el porcentaje de público ni el volumen apostado. Debemos comprobar métrica, proveedor, periodo y muestra.</p></section>
+        <section class="essay-panel"><span class="panel-kicker">04 / CONDUCTA</span><h2>Nunca una casa de apuestas.</h2><p>No procesamos apuestas, administramos saldos ni ofrecemos enlaces para apostar. La plataforma exclusivamente investiga mercados y desempeño deportivo.</p></section>
+      </section>
+      <section class="view-panel" id="panel-bitacora" hidden><div class="log-box"><div class="log-date"><span>26 OCT 2026</span><span class="version-pill">v0.1.4 · Mercado primero</span></div><h2>Fundación del observatorio</h2><p>Se desarrolla el primer diseño, navegación por disciplinas, cálculos descriptivos, escenarios ficticios, metodología y documentación.</p><div class="log-entry"><div><span class="log-dot"></span></div><div><strong>Regla editorial</strong><p>Investigar líneas y tendencias con evidencia. Nunca aceptar apuestas ni gestionar dinero.</p></div></div><div class="log-entry"><div><span class="log-dot"></span></div><div><strong>Separación de fuentes</strong><p>La API real permanece vacía mientras no existan integraciones autorizadas.</p></div></div><div class="log-entry"><div><span class="log-dot"></span></div><div><strong>Próximo hito</strong><p>Elegir proveedor de estadísticas y cuotas, registrar procedencia e implementar un deporte piloto.</p></div></div><p class="file-note">Ver <code>docs/BITACORA.md</code> en el repositorio.</p></div></section>
+      <footer class="footer"><span>© 2026 Radar Deportivo · Producto informativo en desarrollo</span><span>No procesamos apuestas · No se garantizan resultados</span></footer>
+    </main>
+  </div>
+</div>
+<div class="modal-backdrop" id="dialog" hidden><section class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><div class="detail-top"><div><span class="eyebrow">CASO FICTICIO · INVESTIGACIÓN</span><h2 id="dialog-title"></h2><p id="dialog-subtitle"></p></div><button class="icon-button" id="close-dialog" aria-label="Cerrar ficha">✕</button></div><div class="warning-line">⚗ Demostración: competidores, probabilidades, cotizaciones y argumentos son ficticios.</div><div class="detail-stat-grid" id="dialog-stats"></div><h3>Lectura de línea y sugerencia · máximo 300 caracteres</h3><p class="detail-paragraph" id="dialog-summary"></p><div hidden><ul id="dialog-favorable"></ul><ul id="dialog-adverse"></ul></div><h3>Calidad de la evidencia</h3><div class="evidence-row" id="dialog-evidence"></div><div class="detail-bottom"><span>Popularidad de mercado: no disponible</span><span>Sin fuentes oficiales asociadas</span></div><p class="modal-disclaimer">* Valores sintéticos para probar la interfaz; no son pronósticos reales.</p></section></div>
+<script src="demo.js" defer></script>
+</body>
+</html>

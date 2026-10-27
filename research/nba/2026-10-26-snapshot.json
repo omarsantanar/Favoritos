@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-26",
+  "timezone": "America/Santo_Domingo",
+  "status": "laboratorio_no_publicable",
+  "nature": "Captura manual puntual, no integra feed ni autoriza republicación sistemática",
+  "odds_snapshot_local": "2026-10-26T13:05:00-04:00",
+  "injuries_snapshot_local": "2026-10-26T12:45:00-04:00",
+  "external_probability_asof": "Fecha 2026-10-26, hora exacta de cálculo no documentada",
+  "sources": {
+    "odds": "https://dunkapi.com/odds",
+    "external_predictions": "https://www.fanduel.com/research/nba-predictions-odds-10-26-2026",
+    "official_injuries": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-26_12_45PM.pdf",
+    "previous_season_stats": "https://keelstats.com/es/teams?season=2026",
+    "recent_stats": "https://boxscorelab.com/seasons/2026-27/",
+    "market_trends": "https://data.vsin.com/betting-splits/?source=DK&sport=NBA"
+  },
+  "method": "Probabilidades atribuidas a numberFire vía FanDuel Research; NO son calculadas por Radar Deportivo. Líneas FanDuel mostradas por DunkAPI. Probabilidad implícita y EV aritméticos. Alta discrepancia detectada, sin ajuste por bajas, sin backtest.",
+  "games": [
+    {"away":"WAS","home":"CHA","local_time":"19:00","selected":"CHA","source_probability":0.8734,"fanduel_selected_moneyline":-144,"fanduel_opponent_moneyline":122,"market_home_spread":-2.5,"market_total":228.5,"official_injuries":"WAS AJ Dybantsa, Tristan Vukcevic y Jamir Watkins fuera; CHA Kon Knueppel, Coby White y Grant Williams fuera; Naz Reid probable"},
+    {"away":"MIN","home":"CLE","local_time":"19:00","selected":"CLE","source_probability":0.6975,"fanduel_selected_moneyline":-210,"fanduel_opponent_moneyline":176,"market_home_spread":-6.5,"market_total":231.5,"official_injuries":"CLE Khalifa Diop, Nae'Qwan Tomlin fuera; MIN pendiente de informe oficial"},
+    {"away":"CHI","home":"BOS","local_time":"19:30","selected":"BOS","source_probability":0.8336,"fanduel_selected_moneyline":-720,"fanduel_opponent_moneyline":520,"market_home_spread":-13.5,"market_total":232.5,"official_injuries":"CHI Nic Claxton fuera, Noa Essengue y Patrick Williams cuestionables; BOS Devin Carter fuera"},
+    {"away":"DAL","home":"MIA","local_time":"19:30","selected":"MIA","source_probability":0.8120,"fanduel_selected_moneyline":-295,"fanduel_opponent_moneyline":240,"market_home_spread":-7.5,"market_total":240.5,"official_injuries":"DAL Cooper Flagg cuestionable; Santi Aldama, Dereck Lively II, Naji Marshall y Tarik Biberovic fuera; Caleb Martin dudoso; MIA Pelle Larsson disponible"},
+    {"away":"IND","home":"MIL","local_time":"20:00","selected":"MIL","source_probability":0.6690,"fanduel_selected_moneyline":142,"fanduel_opponent_moneyline":-168,"market_home_spread":4.5,"market_total":238.5,"official_injuries":"IND pendiente de informe oficial; MIL no lista bajas en snapshot"},
+    {"away":"PHX","home":"OKC","local_time":"20:00","selected":"OKC","source_probability":0.7050,"fanduel_selected_moneyline":-390,"fanduel_opponent_moneyline":310,"market_home_spread":-9.5,"market_total":221.5,"official_injuries":"PHX Oso Ighodaro dudoso, Mark Williams fuera, Drew Timme G League; OKC pendiente de informe oficial"},
+    {"away":"ATL","home":"HOU","local_time":"20:30","selected":"HOU","source_probability":0.6746,"fanduel_selected_moneyline":-198,"fanduel_opponent_moneyline":166,"market_home_spread":-5.5,"market_total":229.5,"official_injuries":"ATL Henri Veesaar y Mouhamed Gueye fuera; HOU Steven Adams y Marcus Smart fuera"},
+    {"away":"MEM","home":"UTA","local_time":"21:00","selected":"UTA","source_probability":0.5485,"fanduel_selected_moneyline":-116,"fanduel_opponent_moneyline":-102,"market_home_spread":-1.5,"market_total":238.5,"official_injuries":"Ambos equipos pendientes de informe oficial"},
+    {"away":"GSW","home":"DEN","local_time":"22:00","selected":"DEN","source_probability":0.7119,"fanduel_selected_moneyline":-240,"fanduel_opponent_moneyline":198,"market_home_spread":-7.5,"market_total":236.5,"official_injuries":"GSW Jimmy Butler III, Moses Moody, Kristaps Porzingis fuera, Gui Santos cuestionable; DEN Cameron Johnson dudoso, Spencer Jones y Julian Strawther fuera"}
+  ]
+}
