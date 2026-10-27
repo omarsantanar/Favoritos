@@ -1,3 +1,14 @@
+## 2026-10-27 · Comprobación y cierre de corrección de interfaz pública
+
+- **Corrección incorporada:** [PR #2](https://github.com/omarsantanar/Favoritos/pull/2) fusionado en `main`, commit `a5b8750b49b5df89760453e75c3225f2998fe169`.
+- **CI del PR:** [40494963279](https://github.com/omarsantanar/Favoritos/actions/runs/40494963279) **success**: instalación, todas las pruebas, `typecheck` y `build`. Incluye cuatro pruebas nuevas de no exposición de páginas internas.
+- **Verificación de código remoto:** `components/dashboard.tsx` solo incluye tres entradas públicas: Observatorio, Investigación de líneas y Resultados; no contiene los componentes de metodología o bitácora.
+- **Intento de desplegar Pages:** [40495059878](https://github.com/omarsantanar/Favoritos/actions/runs/40495059878) prepara correctamente el artefacto, pero falla al configurar GitHub Pages (sitio todavía no habilitado). **No confirmar URL nueva ni actualización de un sitio alojado por terceros**.
+- **CI de rama principal tras merge:** estado observado `completed`, resultado `success` a la consulta.
+- **Exposición residual:** repositorio `Favoritos` es **público**; docs y código siguen visibles desde GitHub aun cuando el portal no los muestra. Para confidencialidad real, se necesita cambiar permisos/ubicación de la documentación interna.
+- **Estado siguiente:** activar Pages en ajustes del repositorio o desplegar por Vercel vinculado y verificar el sitio servido; mantener datos ficticios identificados como tales.
+
+
 ## 2026-10-27 · v0.1.5 · Contenido interno separado del portal público
 
 - **Motivo:** el usuario advirtió que la navegación pública exponía «Metodología» y «Bitácora» del proceso de desarrollo.
