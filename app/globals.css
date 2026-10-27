@@ -5,3 +5,6 @@
 
 /* v0.1.4: síntesis editorial por línea, con sugerencia explícita. */
 .market-brief{font-size:12px;line-height:1.55;color:var(--text-muted,#a5b1b3);margin:8px 0 10px;overflow-wrap:anywhere}.brief-count{display:block;margin:-9px 0 12px;color:#9ba9ab;font-size:11px}
+
+/* Registro público de disponibilidad de cuotas dominicanas: no contiene enlaces a apuestas. */
+.rd-markets{margin-top:34px;border:1px solid var(--border);border-radius:13px;padding:20px;background:#0c171d}.rd-markets>.section-heading{margin-bottom:18px}.rd-provider-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:18px 0}.rd-provider{border:1px solid var(--border);border-radius:9px;padding:12px;background:#101f23;display:flex;flex-direction:column;gap:9px}.rd-provider span{font-size:12px;font-weight:700;color:#d6e5e1}.rd-provider small,.rd-disclaimer,.rd-small{font-size:10px;color:#8da0a2;line-height:1.6}.rd-small{display:block;margin-top:6px}.rd-status{color:#aab9b8;font-size:11px;line-height:1.7}.rd-no-lines{border:1px dashed #385450;border-radius:10px;padding:18px;display:flex;gap:13px;align-items:flex-start;color:#aac2bb}.rd-no-lines p{margin:0;font-size:12px}.rd-no-lines small{color:#99abaa}.rd-disclaimer{margin:16px 0 0}
