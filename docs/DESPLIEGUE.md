@@ -39,3 +39,9 @@ La app Next.js todavía presenta datos de demostración y `/api/research` devuel
 ## Advertencia de alcance
 
 **El despliegue web del prototipo no implica integración de datos ni capacidad predictiva de un modelo propio.** La primera versión operativa de datos requerirá ingesta trazable y uso legítimo de fuentes gratuitas, modelo calibrado y revisión editorial.
+
+## Resultado comprobado del primer intento (27-10-2026)
+
+Se fusionó el PR #1 (`09fb292e2d8f9e0dfebefca12cda75c2c859bb22`). El workflow [40493239211](https://github.com/omarsantanar/Favoritos/actions/runs/40493239211) generó correctamente el artefacto, pero el trabajo de despliegue falló con **HTTP 404** en `actions/configure-pages@v5` porque **GitHub Pages no está habilitado** en el repositorio. La acción `enablement: true` no es alternativa con el token predeterminado `GITHUB_TOKEN`; requiere token privilegiado con administración y permisos Pages. No crearemos claves ni solicitaremos privilegios extra para evitar esta habilitación manual simple.
+
+**Acción única:** abrir [Settings → Pages](https://github.com/omarsantanar/Favoritos/settings/pages), elegir **GitHub Actions** y repetir [Publicar demostración en GitHub Pages](https://github.com/omarsantanar/Favoritos/actions/workflows/pages.yml). Hasta entonces, no anunciar una URL pública como funcional.

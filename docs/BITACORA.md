@@ -1,3 +1,15 @@
+## 2026-10-27 · Ejecución de publicación Pages y resultado comprobado
+
+- **Repositorio oficial:** `omarsantanar/Favoritos`.
+- **Cambio aprobado:** PR [#1](https://github.com/omarsantanar/Favoritos/pull/1) fusionado en `main`, commit `09fb292e2d8f9e0dfebefca12cda75c2c859bb22`.
+- **CI de PR:** [40493132972](https://github.com/omarsantanar/Favoritos/actions/runs/40493132972) **success**: npm install, tests, typecheck y build.
+- **Preparación de sitio en rama principal:** [40493239211](https://github.com/omarsantanar/Favoritos/actions/runs/40493239211): trabajo `preparar` **success**; HTML autocontenido empaquetado y artefacto subido.
+- **Bloqueo externo verificado:** trabajo `desplegar` **failure** en `actions/configure-pages@v5`: `Get Pages site failed`, HTTP 404 porque GitHub Pages aún no está habilitado. El paso `deploy-pages` quedó omitido. **No existe URL pública confirmada**.
+- **Acción administrativa pendiente:** en https://github.com/omarsantanar/Favoritos/settings/pages, seleccionar Source → **GitHub Actions**; después volver a ejecutar [el workflow de publicación](https://github.com/omarsantanar/Favoritos/actions/workflows/pages.yml).
+- **Restricción mantenida:** únicamente escenarios ficticios; sin líneas reales, sin APIs externas, sin transacciones de apuestas y sin servicios de pago.
+- **Estado:** código y empaquetado ejecutables; publicación pública **bloqueada por configuración inicial de Pages**. Una vez habilitado, verificar URL y actualizar este registro.
+
+
 ## 2026-10-27 · v0.1.4 · Preparación de ejecución web (demostración GitHub Pages)
 
 - **Objetivo:** hacer accesible una demostración interactiva de Favoritos sin requerir pago ni exponer escenarios como pronósticos reales.
