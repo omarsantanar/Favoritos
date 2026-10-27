@@ -1,3 +1,15 @@
+## 2026-10-27 · v0.2.0 · Motor de extracción avanzada con licencias
+
+- **Solicitud:** incluir scraping/extracción de estadísticas avanzadas para las seis disciplinas de Favoritos.
+- **Evaluación de condiciones:** NBA Stats no permite descargas; MoneyPuck limita uso y solicita autorización para scraping no aprobado; nflverse publica datos con licencia CC BY 4.0 (salvo excepciones); SABR/Lahman tiene licencia CC BY-SA 3.0. hoopR NBA, Open Boxing y datasets históricos MMA se registran sin integración hasta aclarar los derechos originales.
+- **Implementación:** dos importadores **reales bajo ejecución manual**: NFL nflverse PBP comprimido y MLB SABR/Lahman Batting.csv de espejo abierto. Agregación por equipo y temporada: EPA ofensivo NFL; OBP, SLG, OPS históricos MLB.
+- **Seguridad:** hosts de descarga allowlist, URL predeterminadas no editables por el visitante, máximo 30 MB / 450.000 filas, sin scraping de HTML ni login, consultas bajo demanda, hash de contenido y registro de fuente/licencia/hora; sin claves.
+- **Exposición:** los datos recopilados se guardan como artefactos de investigación y no pasan a `/api/research`, el frontend o una recomendación pública. Fuente observada distinta de información confirmada; siguen sin existir P(modelo), cuotas o popularidad en este pipeline.
+- **Nuevos archivos:** `scripts/ingest_advanced.py`, `config/advanced-stats-sources.json`, `.github/workflows/advanced-stats.yml`, `.github/workflows/advanced-stats-smoke.yml`, `tests/test_ingest_advanced.py`, `docs/ESTADISTICAS_AVANZADAS.md`.
+- **Otros cambios:** `.github/workflows/ci.yml`, `.gitignore`, `README.md`, `docs/ARQUITECTURA.md`, `docs/FUENTES_Y_LICENCIAS.md`, `docs/DECISIONES.md`, `docs/MANUAL_OPERATIVO.md` y esta bitácora.
+- **Pruebas pendientes al redactar:** validar offline vía Python, `npm test`, `typecheck`, `build` y comprobaciones reales de las fuentes en workflows GitHub. Registrar resultados y fallas reales en seguimiento.
+- **Siguiente hito:** auditar cobertura de temporada y tamaños de muestra, agregar control de caducidad y cruce con mercados gratuitos, investigar fuentes autorizadas para NBA/NHL/MMA/boxeo; mantener el criterio de 300 caracteres.
+
 ## 2026-10-27 · Cierre de publicación v0.1.6 y validación
 
 - **PR:** [#3](https://github.com/omarsantanar/Favoritos/pull/3), fusionado en `main` con commit `5f7d66372cc1a4530e4b80a5c1410cb688998d24`.

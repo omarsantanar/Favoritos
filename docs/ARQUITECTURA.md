@@ -46,3 +46,7 @@ Solo candidatos gratuitos, con cuota y derechos explícitos registrados en `conf
 - Evitar modelado basado en información posterior al instante del pronóstico.
 - No publicar datos sin licencia apropiada.
 - Futura app Expo reutiliza contratos y API, no scraping desde teléfonos.
+
+## v0.2.0 · Importación avanzada de investigación
+
+`scripts/ingest_advanced.py` genera JSON **no público** a partir de descargas licenciadas NFL/MLB, bajo ejecución manual con controles. No se conecta a Next.js ni a una base de datos y no calcula probabilidades o cuotas. Las otras disciplinas mantienen el estado bloqueado a espera de derechos/insumos verificables. Ver `docs/ESTADISTICAS_AVANZADAS.md`.

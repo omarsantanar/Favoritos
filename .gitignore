@@ -8,3 +8,8 @@ out/
 *.log
 *.tsbuildinfo
 coverage/
+
+# Artefactos de investigación generados por importación manual
+research/stats/
+__pycache__/
+*.pyc

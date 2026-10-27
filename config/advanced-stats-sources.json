@@ -1,0 +1,96 @@
+{
+  "version": "0.2.0",
+  "reviewed_on": "2026-10-27",
+  "restriction": "Solamente descargas explícitas publicadas con licencia. No hacer scraping HTML no autorizado, eludir robots, protecciones, geolocalización, login o pagos.",
+  "deployment": "manual_only",
+  "public_feed_enabled": false,
+  "predictions_enabled": false,
+  "sources": [
+    {
+      "id": "nflverse_pbp",
+      "sport": "NFL",
+      "status": "implemented_manual",
+      "kind": "licensed_release_csv_gz",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.csv.gz",
+      "license": "CC BY 4.0 (excepto FTN, que no usamos)",
+      "attribution": "nflverse + proveedor original",
+      "metrics": [
+        "EPA/play",
+        "EPA/pase",
+        "EPA/carrera"
+      ],
+      "caveats": [
+        "Solo season REG, jugadas run/pass",
+        "Muestra temprana inestable"
+      ]
+    },
+    {
+      "id": "lahman_batting",
+      "sport": "MLB",
+      "status": "implemented_manual",
+      "kind": "licensed_historical_csv_mirror",
+      "url": "https://raw.githubusercontent.com/cbwinslow/lahman-database-csv/main/data/Batting.csv",
+      "license": "CC BY-SA 3.0",
+      "attribution": "SABR / Sean Lahman / mirror cbwinslow",
+      "metrics": [
+        "OBP",
+        "SLG",
+        "OPS"
+      ],
+      "caveats": [
+        "Versión 2025; no datos de hoy",
+        "No es Statcast; verificar espejo contra SABR"
+      ]
+    },
+    {
+      "id": "hoopr_nba",
+      "sport": "NBA",
+      "status": "blocked_rights_review",
+      "kind": "community_release",
+      "url": "https://github.com/sportsdataverse/hoopR-nba-data",
+      "license": "Repositorio CC BY 4.0; derechos y condiciones de orígenes subyacentes pendientes de revisión",
+      "metrics": [
+        "boxscores",
+        "team ratings potenciales"
+      ]
+    },
+    {
+      "id": "moneypuck_nhl",
+      "sport": "NHL",
+      "status": "blocked_approval_required",
+      "kind": "published_dataset",
+      "url": "https://www.moneypuck.com/data.htm",
+      "license": "Uso gratuito no comercial y periodístico ad hoc; automatización recurrente no aprobada",
+      "metrics": [
+        "xG",
+        "goles",
+        "porteros"
+      ]
+    },
+    {
+      "id": "ufc_data_mma",
+      "sport": "MMA",
+      "status": "blocked_upstream_rights_review",
+      "kind": "community_dataset",
+      "url": "https://github.com/nlbair/ufc-data",
+      "license": "Dataset CC BY 4.0; atribución y permisos de fuentes originales pendientes de revisión",
+      "metrics": [
+        "golpes",
+        "resultados",
+        "scorecards"
+      ]
+    },
+    {
+      "id": "openboxing",
+      "sport": "Boxeo",
+      "status": "blocked_license_review",
+      "kind": "public_csv",
+      "url": "https://www.openboxing.org/data/",
+      "license": "CSV descargables, licencia y derecho de automatización no confirmados",
+      "metrics": [
+        "títulos",
+        "categorías"
+      ]
+    }
+  ]
+}

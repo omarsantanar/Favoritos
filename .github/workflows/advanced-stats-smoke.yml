@@ -1,0 +1,35 @@
+name: Verificar descargas avanzadas permitidas (PR)
+on:
+  pull_request:
+    paths:
+      - scripts/ingest_advanced.py
+      - config/advanced-stats-sources.json
+      - .github/workflows/advanced-stats-smoke.yml
+permissions:
+  contents: read
+jobs:
+  licensed-source-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - source: nflverse_pbp
+            season: '2026'
+          - source: lahman_batting
+            season: '2025'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Importar conjunto de datos libre y generar agregados
+        run: python3 scripts/ingest_advanced.py --source "${{ matrix.source }}" --season "${{ matrix.season }}" --out research/stats
+      - name: Guardar muestra agregada como artefacto de investigación
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: licensed-stats-${{ matrix.source }}
+          path: research/stats/*.json
+          retention-days: 7

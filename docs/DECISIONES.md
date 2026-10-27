@@ -19,3 +19,5 @@
 
 | ADR-013 | 2026-10-27 | Retirar hípica; seis disciplinas activas. | Cambio de alcance solicitado por el usuario. |
 | ADR-014 | 2026-10-27 | Registrar sitios oficiales y casas como consulta manual sin ingesta no autorizada. | Priorizar mercado, fuentes verificables y prohibición de operar apuestas. |
+
+| ADR-015 | 2026-10-27 | Extracción avanzada solo desde conjuntos publicados con licencias y URLs fijas; dos importadores manuales y cuatro fuentes bloqueadas para revisión. | Obtener datos reproducibles sin scraping no autorizado ni trasladar información a la web pública. |

@@ -1,0 +1,36 @@
+name: Importación manual de estadísticas avanzadas (solo fuentes autorizadas)
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: Fuente autorizada
+        type: choice
+        required: true
+        options: [nflverse_pbp, lahman_batting]
+      season:
+        description: Temporada disponible (NFL 2026, MLB 2025)
+        required: true
+        type: string
+        default: '2026'
+permissions:
+  contents: read
+jobs:
+  research-import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Descargar y agregar datos con límites
+        env:
+          SOURCE_ID: ${{ inputs.source }}
+          SEASON: ${{ inputs.season }}
+        run: python3 scripts/ingest_advanced.py --source "$SOURCE_ID" --season "$SEASON" --out research/stats
+      - name: Publicar solo snapshots agregados de investigación
+        uses: actions/upload-artifact@v4
+        with:
+          name: statistics-research-${{ inputs.source }}-${{ inputs.season }}
+          path: research/stats/*.json
+          retention-days: 14

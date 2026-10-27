@@ -14,6 +14,8 @@ jobs:
       # No se genera lockfile sin acceso verificable al registro npm en este entorno.
       # Tras la primera instalación exitosa, guardar package-lock.json y usar npm ci.
       - run: npm install --no-audit --no-fund
+      - name: Probar importadores de datos sin red
+        run: python3 -m unittest discover -s tests -p 'test_ingest_*.py' -v
       - run: npm test
       - run: npm run typecheck
       - run: npm run build
